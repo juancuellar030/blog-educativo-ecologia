@@ -1,14 +1,15 @@
-/* --- Variables de Color y Fuentes (Tema Natural/Claro) --- */
+/* --- Variables de Color y Fuentes (Tema Personalizado) --- */
 :root {
-    /* Paleta Inspirada en las Imágenes */
-    --page-bg: #f4f5f0;         /* Fondo de página, un blanco roto muy claro */
-    --panel-green: #e1e8dd;     /* Verde suave para paneles como header y footer */
-    --text-green: #3a5a40;      /* Verde oscuro para todo el texto y logos */
-    --accent-green: #89a281;    /* Verde medio para bordes, acentos y hover */
-    --content-bg: #ffffff;      /* Blanco puro para el área de contenido principal */
+    /* Paleta Exacta Proporcionada */
+    --page-bg: #B7C575;
+    --header-footer-bg: #92A342;
+    --content-bg: #E9E4D2;
+    --accent-color: #957C58; /* Brown for buttons */
+    --text-color: #322B1A;
+    --soft-green-accent: #B6C475;
 
-    /* Fuentes (sin cambios) */
-    --font-headings: 'Be Vietnam Pro', sans-serif;
+    /* Fuentes */
+    --font-headings: 'Gochi Hand', cursive;
     --font-body: 'Open Sans', sans-serif;
 }
 
@@ -22,19 +23,17 @@
 body {
     font-family: var(--font-body);
     background-color: var(--page-bg);
-    color: var(--text-green);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
-/* --- Cabecera y Navegación (Estilo Minimalista) --- */
+/* --- Cabecera y Navegación (Estilo Botones) --- */
 .site-header {
-    background-color: var(--panel-green);
-    box-shadow: none; /* Quitamos la sombra para un look más plano */
+    background-color: var(--header-footer-bg);
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 2px solid #d1d9ca; /* Borde sutil */
 }
 
 .header-content {
@@ -52,35 +51,42 @@ body {
 
 .logo h1 {
     font-family: var(--font-headings);
-    color: var(--text-green);
+    color: var(--text-color);
     margin-left: 10px;
-    font-size: 1.5rem;
-}
-.logo svg {
-    stroke: var(--text-green);
+    font-size: 2rem; /* Aumentamos tamaño para la nueva fuente */
+    line-height: 1;
 }
 
 nav ul {
     list-style-type: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 0.75rem;
 }
 
-/* Revertimos a un estilo de enlace de texto limpio */
 nav a {
+    display: block;
     text-decoration: none;
-    color: var(--text-green);
-    background-color: transparent;
+    color: var(--content-bg);
+    background-color: var(--accent-color);
+    font-family: var(--font-body); /* Usamos la fuente del cuerpo para legibilidad */
     font-weight: bold;
-    padding-bottom: 5px;
-    border-bottom: 2px solid transparent;
-    transition: color 0.3s, border-bottom-color 0.3s;
+    padding: 8px 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, transform 0.2s;
     white-space: nowrap;
 }
 
-nav a:hover, nav a.active {
-    color: var(--text-green);
-    border-bottom-color: var(--accent-green);
+nav a:hover {
+    background-color: #7d6547; /* Un marrón ligeramente más oscuro para hover */
+    transform: translateY(-2px);
+}
+
+nav a.active {
+    background-color: var(--text-color); /* Marrón oscuro para el botón activo */
+    color: var(--page-bg);
+    transform: translateY(1px);
+    box-shadow: none;
 }
 
 
@@ -88,10 +94,9 @@ nav a:hover, nav a.active {
 #content-container {
     max-width: 900px;
     margin: 2rem auto;
-    padding: 0;
     background-color: var(--content-bg);
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Sombra suave */
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(44, 37, 21, 0.3);
     overflow: hidden;
 }
 
@@ -106,22 +111,24 @@ nav a:hover, nav a.active {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* --- Estilos de Contenido --- */
 .content-section h2 {
     font-family: var(--font-headings);
-    color: var(--text-green);
+    color: var(--header-footer-bg);
+    font-size: 2.8rem;
     margin-bottom: 1.5rem;
-    border-bottom: 2px solid var(--panel-green);
-    padding-bottom: 0.5rem;
+    line-height: 1.2;
+    text-align: center;
 }
 
 .content-section h3 {
     font-family: var(--font-headings);
-    color: var(--text-green);
+    color: var(--text-color);
+    font-size: 1.8rem;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
 }
@@ -131,14 +138,15 @@ nav a:hover, nav a.active {
     height: auto;
     border-radius: 8px;
     margin-bottom: 1.5rem;
+    border: 3px solid var(--page-bg);
 }
 
 /* --- Estilos específicos de secciones --- */
 .strategy-list article {
     margin-bottom: 1.5rem;
     padding: 1rem;
-    background-color: var(--page-bg);
-    border-left: 5px solid var(--accent-green);
+    background-color: #f3efe2;
+    border-left: 5px solid var(--header-footer-bg);
     border-radius: 4px;
 }
 
@@ -149,7 +157,6 @@ nav a:hover, nav a.active {
     overflow: hidden;
     margin-top: 1rem;
     border-radius: 8px;
-    border: 1px solid var(--panel-green);
 }
 
 .video-container iframe, .iframe-container iframe {
@@ -161,18 +168,21 @@ nav a:hover, nav a.active {
 }
 
 .video-placeholder {
-    background: #e0e0e0;
+    background: #d4cfbc;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    color: #666;
+    color: var(--text-color);
+}
+.video-placeholder h3 {
+    color: var(--text-color);
 }
 
 .activity {
-    background-color: var(--page-bg);
+    background-color: #f3efe2;
     padding: 1.5rem;
     border-radius: 8px;
     margin-bottom: 1.5rem;
@@ -199,9 +209,8 @@ footer {
     text-align: center;
     padding: 2rem 0;
     margin-top: 2rem;
-    background-color: var(--panel-green);
-    color: var(--text-green);
-    border-top: 2px solid #d1d9ca;
+    background-color: var(--header-footer-bg);
+    color: var(--content-bg);
 }
 
 /* --- Diseño Responsivo --- */
@@ -214,14 +223,18 @@ footer {
     nav ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5rem 1rem;
+        gap: 0.5rem;
     }
     
     .logo h1 {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
     }
     
     .content-section {
         padding: 1.5rem;
+    }
+
+    .content-section h2 {
+        font-size: 2.2rem;
     }
 }
