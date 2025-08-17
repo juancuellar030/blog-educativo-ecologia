@@ -1,0 +1,212 @@
+/* --- Variables de Color y Fuentes --- */
+:root {
+    --primary-green: #2c5e3f; /* Verde profundo para cabeceras y títulos */
+    --secondary-green: #4a9366; /* Verde medio para enlaces y acentos */
+    --ocean-blue: #3a8d9d;
+    --earth-brown: #9d7a54;
+    --light-bg: #f4f7f6; /* Fondo general, un gris muy claro */
+    --text-color: #333333;
+    --header-bg: #ffffff;
+    
+    --font-headings: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+/* --- Estilos Generales --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Cabecera y Navegación --- */
+.site-header {
+    background-color: var(--header-bg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    font-family: var(--font-headings);
+    color: var(--primary-green);
+    margin-left: 10px;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--secondary-green);
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-bottom-color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--primary-green);
+    border-bottom-color: var(--primary-green);
+}
+
+/* --- Contenedor Principal y Secciones --- */
+#content-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+.content-section {
+    display: none; /* Ocultar todas las secciones por defecto */
+    padding: 2rem;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.content-section.active {
+    display: block; /* Mostrar solo la sección activa */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Estilos de Contenido --- */
+.content-section h2 {
+    font-family: var(--font-headings);
+    color: var(--primary-green);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--ocean-blue);
+    padding-bottom: 0.5rem;
+}
+
+.content-section h3 {
+    font-family: var(--font-headings);
+    color: var(--secondary-green);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.featured-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Estilos específicos de secciones --- */
+.strategy-list article {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: var(--light-bg);
+    border-left: 5px solid var(--secondary-green);
+    border-radius: 4px;
+}
+
+.video-container, .iframe-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporción 16:9 */
+    height: 0;
+    overflow: hidden;
+    margin-top: 1rem;
+    border-radius: 8px;
+}
+
+.video-container iframe, .iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-placeholder {
+    background: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    color: #666;
+}
+
+.activity {
+    background-color: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+.activity small {
+    display: block;
+    margin-top: 1rem;
+    color: #777;
+}
+
+.button-disabled {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 10px 15px;
+    background-color: #ccc;
+    color: #666;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: not-allowed;
+}
+
+/* --- Pie de Página --- */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    background-color: var(--primary-green);
+    color: #fff;
+}
+
+/* --- Diseño Responsivo --- */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem 1rem;
+    }
+
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+}
