@@ -4,596 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoConciencia Joven: Sembrando Futuro</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation Header -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="nav-brand">
-                <i class="fas fa-seedling"></i>
-                <span>EcoConciencia Joven</span>
+
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#2c5e3f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                    <path d="M12 8v4l-2 2"></path>
+                    <path d="M8.5 17.5c1.5 1 3.5 1.5 5.5 0"></path>
+                </svg>
+                <h1>EcoConciencia Joven: Sembrando Futuro</h1>
             </div>
-            <div class="nav-menu" id="nav-menu">
-                <button class="nav-item" data-section="home">
-                    <i class="fas fa-home"></i>
-                    <span>Inicio</span>
-                </button>
-                <button class="nav-item" data-section="sustainability">
-                    <i class="fas fa-balance-scale"></i>
-                    <span>Sostenibilidad</span>
-                </button>
-                <button class="nav-item" data-section="footprint">
-                    <i class="fas fa-shoe-prints"></i>
-                    <span>Huella Ecológica</span>
-                </button>
-                <button class="nav-item" data-section="strategies">
-                    <i class="fas fa-lightbulb"></i>
-                    <span>Estrategias</span>
-                </button>
-                <button class="nav-item" data-section="video">
-                    <i class="fas fa-play-circle"></i>
-                    <span>Video</span>
-                </button>
-                <button class="nav-item" data-section="activities">
-                    <i class="fas fa-puzzle-piece"></i>
-                    <span>Actividades</span>
-                </button>
-            </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
+            <nav>
+                <ul>
+                    <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                    <li><a href="#sostenibilidad" class="nav-link">Sostenibilidad</a></li>
+                    <li><a href="#huella" class="nav-link">Nuestra Huella</a></li>
+                    <li><a href="#estrategias" class="nav-link">Estrategias</a></li>
+                    <li><a href="#video" class="nav-link">Video</a></li>
+                    <li><a href="#recursos" class="nav-link">Recursos</a></li>
+                    <li><a href="#actividades" class="nav-link">Actividades</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Main Content Container -->
-    <main class="main-content" id="main-content">
-        <!-- Content will be loaded here dynamically -->
+    <main id="content-container">
+        <!-- SECCIÓN DE INICIO -->
+        <section id="inicio" class="content-section active">
+            <h2>¡Bienvenido a EcoConciencia Joven: Juntos Sembrando un Futuro Sostenible!</h2>
+            <img src="https://via.placeholder.com/800x300.png?text=Manos+Jóvenes+Cuidando+la+Tierra" alt="Collage de acciones sostenibles" class="featured-image">
+            <p>En este espacio, exploraremos juntos cómo nuestras acciones cotidianas impactan el planeta y descubriremos estrategias poderosas para construir un mundo más verde y justo. Las prácticas sostenibles no son solo para expertos; son acciones que pretenden minimizar el impacto negativo hacia el medio ambiente, la sociedad y la economía, promoviendo la conservación de los recursos naturales y la equidad social para todos. ¡Tu participación es clave para el cambio! Te invitamos a explorar, aprender e inspirarte para ser un verdadero Guardián del Planeta.</p>
+        </section>
+
+        <!-- SECCIÓN DE SOSTENIBILIDAD -->
+        <section id="sostenibilidad" class="content-section">
+            <h2>Entendiendo la Sostenibilidad: Pilares y Propósito</h2>
+            <img src="https://via.placeholder.com/600x400.png?text=Infografía:+Pilares+de+la+Sostenibilidad" alt="Infografía de los tres pilares de la sostenibilidad" class="featured-image">
+            <p>El concepto de sostenibilidad se ha vuelto fundamental en la actualidad. Se define como el desarrollo que 'satisface las necesidades del presente sin comprometer la capacidad de las generaciones futuras de satisfacer las propias'. Se sustenta en tres pilares interconectados: la equidad social, la prosperidad económica y la calidad del medio ambiente. No se trata solo de proteger la naturaleza, sino de asegurar un desarrollo equilibrado que beneficie a todos y garantice los recursos para el futuro. La Agenda 2030 de las Naciones Unidas, con sus Objetivos de Desarrollo Sostenible (ODS), resalta la importancia global de adoptar prácticas sostenibles para la supervivencia y el bienestar de las generaciones presentes y futuras.</p>
+        </section>
+
+        <!-- SECCIÓN DE HUELLA ECOLÓGICA -->
+        <section id="huella" class="content-section">
+            <h2>El Impacto de Nuestro Consumo: Conoce tu Huella y los Problemas Ambientales Actuales</h2>
+            <img src="https://via.placeholder.com/700x350.png?text=Gráfico+Impactante+Huella+Ecológica" alt="Gráfico sobre la huella ecológica global" class="featured-image">
+            <p>A menudo no somos conscientes del verdadero impacto de nuestras decisiones diarias. La 'huella ecológica' es un indicador ambiental que mide el impacto de nuestro consumo sobre el planeta. Lamentablemente, la demanda de la humanidad sobre los recursos naturales crece un 50% más de lo que el planeta puede ofrecer. Problemas como la contaminación del aire y el agua, la deforestación y la pérdida de biodiversidad son consecuencias directas de un modelo de desarrollo insostenible y del uso irresponsable de los recursos. Aunque la conciencia ambiental ha aumentado, aún existe una brecha entre la intención de cuidar el ambiente y nuestro comportamiento real. ¡Es hora de cerrarla!</p>
+        </section>
+
+        <!-- SECCIÓN DE ESTRATEGIAS -->
+        <section id="estrategias" class="content-section">
+            <h2>¡Manos a la Obra! Estrategias Clave para un Futuro Sostenible</h2>
+            <p>Para enfrentar el desafío del cambio climático y proteger el medio ambiente, es fundamental implementar diversas acciones y estrategias. Aquí te presentamos algunas que puedes aplicar en tu día a día, en casa y en la escuela, basadas en recomendaciones académicas:</p>
+            <div class="strategy-list">
+                <article>
+                    <h3>Gestión de Residuos</h3>
+                    <p>Establecer un sistema de tarifa de recolección de residuos puede incentivar una mejor gestión en los hogares. Es crucial realizar evaluaciones iniciales de los desechos generados para identificar los tipos más comunes y su volumen, lo que permite implementar eficazmente la estrategia de las 3R: Reducir, Reutilizar y Reciclar. Se puede apoyar a recicladores informales para reducir desechos en vertederos.</p>
+                </article>
+                <article>
+                    <h3>Ahorro de Recursos</h3>
+                    <p>Instalar dispositivos de ahorro de agua en colegios y hogares reduce el consumo sin afectar la funcionalidad. La captación y reutilización de agua de lluvia para usos no potables, como el riego de jardines, es una práctica excelente. Concientizar sobre el consumo de energía, apagando y desenchufando equipos tras su uso, es vital.</p>
+                </article>
+                <article>
+                    <h3>Uso de Materiales Sostenibles</h3>
+                    <p>Evaluar el uso de materiales que reduzcan el consumo de papel y otros recursos es fundamental, promoviendo la digitalización de documentos y el uso de libros electrónicos.</p>
+                </article>
+                 <article>
+                    <h3>Educación y Conciencia</h3>
+                    <p>Organizar actividades de educación y concientización sobre sostenibilidad es clave. Las instituciones educativas tienen la responsabilidad de integrar la sostenibilidad en los planes de estudio y programas académicos, y capacitar a estudiantes en toma de decisiones informadas y resolución de problemas ambientales.</p>
+                </article>
+                <article>
+                    <h3>Participación Ciudadana</h3>
+                    <p>Fomentar una cultura de participación y empoderamiento es esencial para que los estudiantes se conviertan en agentes de cambio y líderes comprometidos con la sostenibilidad.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE VIDEO -->
+        <section id="video" class="content-section">
+            <h2>Video Destacado: "Nuestro Compromiso Verde"</h2>
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <h3>"Nuestro Compromiso Verde: Pequeñas Acciones, Gran Impacto"</h3>
+                    <p>(El video será añadido aquí una vez que esté editado)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE RECURSOS -->
+        <section id="recursos" class="content-section">
+            <h2>Recursos Multimedia (Presentación de la Misión 1)</h2>
+            <p>Explora esta presentación para profundizar en los conceptos de una economía sostenible.</p>
+            <div class="iframe-container">
+                <iframe src="https://juancuellar030.github.io/sustainable-economy-presentation/" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE ACTIVIDADES -->
+        <section id="actividades" class="content-section">
+            <h2>Actividades Interactivas</h2>
+            <div class="activity">
+                <h3>Actividad 1: "Mi Reto Sostenible Diario"</h3>
+                <p>Un cuestionario de autoevaluación donde respondes preguntas sobre tus hábitos diarios. Al finalizar, recibirás una "puntuación de sostenibilidad" y consejos personalizados para mejorar.</p>
+                <p><strong>Propósito:</strong> Reforzar la conciencia ambiental y vincular la teoría con acciones prácticas.</p>
+                <a href="#" class="button-disabled" title="Próximamente">Iniciar Cuestionario (Próximamente)</a>
+                <small><em>Herramienta sugerida: Se podría implementar con Google Forms o Typeform.</em></small>
+            </div>
+            <div class="activity">
+                <h3>Actividad 2: "Cadena de Ideas Verdes"</h3>
+                <p>Un espacio abierto donde puedes publicar tus propias ideas creativas para implementar prácticas sostenibles en tu entorno. ¡Comenta y colabora con las ideas de otros!</p>
+                <p><strong>Propósito:</strong> Fomentar la participación, la creatividad y la resolución de problemas ambientales.</p>
+                <a href="#" class="button-disabled" title="Próximamente">Ir al Muro Colaborativo (Próximamente)</a>
+                <small><em>Herramienta sugerida: Un Padlet incrustado o un foro en el blog.</em></small>
+            </div>
+        </section>
+
     </main>
 
-    <!-- Loading Spinner -->
-    <div class="loading-spinner" id="loading-spinner">
-        <div class="spinner"></div>
-        <p>Cargando contenido...</p>
-    </div>
-
-    <!-- Sections Content (Hidden Templates) -->
-    
-    <!-- Home Section -->
-    <div class="section-template" id="home-template">
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1 class="hero-title">¡Bienvenido a EcoConciencia Joven!</h1>
-                <h2 class="hero-subtitle">Juntos Sembrando un Futuro Sostenible</h2>
-                <p class="hero-text">
-                    En este espacio, exploraremos juntos cómo nuestras acciones cotidianas impactan el planeta y descubriremos 
-                    estrategias poderosas para construir un mundo más verde y justo. Las prácticas sostenibles no son solo para 
-                    expertos; son acciones que pretenden minimizar el impacto negativo hacia el medio ambiente, la sociedad y 
-                    la economía, promoviendo la conservación de los recursos naturales y la equidad social para todos.
-                </p>
-                <div class="cta-section">
-                    <p class="cta-text">¡Tu participación es clave para el cambio!</p>
-                    <p class="cta-subtitle">Te invitamos a explorar, aprender e inspirarte para ser un verdadero <strong>Guardián del Planeta</strong>.</p>
-                </div>
-                <div class="hero-buttons">
-                    <button class="btn-primary" data-section="sustainability">
-                        <i class="fas fa-leaf"></i>
-                        Explorar Sostenibilidad
-                    </button>
-                    <button class="btn-secondary" data-section="activities">
-                        <i class="fas fa-hands-helping"></i>
-                        Ver Actividades
-                    </button>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="earth-animation">
-                    <i class="fas fa-globe-americas"></i>
-                    <div class="hands">
-                        <i class="fas fa-hand-holding-heart"></i>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="features-preview">
-            <h3>¿Qué encontrarás aquí?</h3>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-seedling"></i>
-                    <h4>Conceptos Claros</h4>
-                    <p>Aprende sobre sostenibilidad de manera simple y práctica</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-recycle"></i>
-                    <h4>Estrategias Reales</h4>
-                    <p>Descubre acciones concretas que puedes aplicar hoy mismo</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-users"></i>
-                    <h4>Comunidad Activa</h4>
-                    <p>Conecta con otros jóvenes comprometidos con el cambio</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h4>Impacto Medible</h4>
-                    <p>Evalúa tu huella ecológica y mide tu progreso</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Sustainability Section -->
-    <div class="section-template" id="sustainability-template">
-        <section class="content-section">
-            <div class="section-header">
-                <h1>Entendiendo la Sostenibilidad</h1>
-                <h2>Pilares y Propósito</h2>
-            </div>
-            
-            <div class="content-body">
-                <div class="intro-text">
-                    <p>
-                        El concepto de sostenibilidad se ha vuelto fundamental en la actualidad. Se define como el desarrollo que 
-                        <strong>'satisface las necesidades del presente sin comprometer la capacidad de las generaciones futuras de satisfacer las propias'</strong>.
-                    </p>
-                </div>
-
-                <div class="pillars-section">
-                    <h3>Los Tres Pilares de la Sostenibilidad</h3>
-                    <div class="pillars-container">
-                        <div class="pillar">
-                            <div class="pillar-icon social">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <h4>Equidad Social</h4>
-                            <p>Garantizar justicia social, igualdad de oportunidades y bienestar para todas las personas.</p>
-                        </div>
-                        <div class="pillar">
-                            <div class="pillar-icon economic">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <h4>Prosperidad Económica</h4>
-                            <p>Promover un crecimiento económico responsable que genere valor sin agotar recursos.</p>
-                        </div>
-                        <div class="pillar">
-                            <div class="pillar-icon environmental">
-                                <i class="fas fa-leaf"></i>
-                            </div>
-                            <h4>Calidad del Medio Ambiente</h4>
-                            <p>Proteger y conservar los ecosistemas para las generaciones presentes y futuras.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="ods-section">
-                    <h3>Objetivos de Desarrollo Sostenible (ODS)</h3>
-                    <p>
-                        No se trata solo de proteger la naturaleza, sino de asegurar un desarrollo equilibrado que beneficie a todos 
-                        y garantice los recursos para el futuro. La Agenda 2030 de las Naciones Unidas, con sus Objetivos de Desarrollo 
-                        Sostenible (ODS), resalta la importancia global de adoptar prácticas sostenibles para la supervivencia y el 
-                        bienestar de las generaciones presentes y futuras.
-                    </p>
-                    <div class="ods-highlight">
-                        <i class="fas fa-globe"></i>
-                        <span>17 objetivos para transformar nuestro mundo hacia 2030</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Footprint Section -->
-    <div class="section-template" id="footprint-template">
-        <section class="content-section">
-            <div class="section-header">
-                <h1>El Impacto de Nuestro Consumo</h1>
-                <h2>Conoce tu Huella y los Problemas Ambientales Actuales</h2>
-            </div>
-            
-            <div class="content-body">
-                <div class="alert-box">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <p>
-                        A menudo no somos conscientes del verdadero impacto de nuestras decisiones diarias. 
-                        La <strong>'huella ecológica'</strong> es un indicador ambiental que mide el impacto de 
-                        nuestro consumo sobre el planeta.
-                    </p>
-                </div>
-
-                <div class="statistics-section">
-                    <h3>Datos Impactantes</h3>
-                    <div class="stats-grid">
-                        <div class="stat-card alarming">
-                            <div class="stat-number">150%</div>
-                            <div class="stat-description">La demanda de la humanidad supera en un 50% lo que el planeta puede ofrecer</div>
-                        </div>
-                        <div class="stat-card">
-                            <i class="fas fa-tree"></i>
-                            <div class="stat-description">Deforestación masiva destruye ecosistemas únicos</div>
-                        </div>
-                        <div class="stat-card">
-                            <i class="fas fa-smog"></i>
-                            <div class="stat-description">Contaminación del aire y agua afecta la salud global</div>
-                        </div>
-                        <div class="stat-card">
-                            <i class="fas fa-paw"></i>
-                            <div class="stat-description">Pérdida acelerada de biodiversidad amenaza el equilibrio</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="problems-section">
-                    <h3>Problemas Ambientales Actuales</h3>
-                    <div class="problems-list">
-                        <div class="problem-item">
-                            <i class="fas fa-industry"></i>
-                            <div>
-                                <h4>Contaminación Industrial</h4>
-                                <p>Emisiones tóxicas que afectan el aire, agua y suelo</p>
-                            </div>
-                        </div>
-                        <div class="problem-item">
-                            <i class="fas fa-fire"></i>
-                            <div>
-                                <h4>Deforestación</h4>
-                                <p>Pérdida de bosques reduce la capacidad de absorción de CO₂</p>
-                            </div>
-                        </div>
-                        <div class="problem-item">
-                            <i class="fas fa-thermometer-three-quarters"></i>
-                            <div>
-                                <h4>Cambio Climático</h4>
-                                <p>Aumento de temperatura global con consecuencias irreversibles</p>
-                            </div>
-                        </div>
-                        <div class="problem-item">
-                            <i class="fas fa-trash"></i>
-                            <div>
-                                <h4>Gestión Inadecuada de Residuos</h4>
-                                <p>Acumulación de desechos contamina ecosistemas</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="call-to-action">
-                    <div class="cta-content">
-                        <h3>¡Es hora de cerrar la brecha!</h3>
-                        <p>
-                            Aunque la conciencia ambiental ha aumentado, aún existe una brecha entre la intención de cuidar 
-                            el ambiente y nuestro comportamiento real.
-                        </p>
-                        <button class="btn-primary" data-section="strategies">
-                            <i class="fas fa-rocket"></i>
-                            Descubre las Estrategias
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Strategies Section -->
-    <div class="section-template" id="strategies-template">
-        <section class="content-section">
-            <div class="section-header">
-                <h1>¡Manos a la Obra!</h1>
-                <h2>Estrategias Clave para un Futuro Sostenible</h2>
-            </div>
-            
-            <div class="content-body">
-                <div class="intro-text">
-                    <p>
-                        Para enfrentar el desafío del cambio climático y proteger el medio ambiente, es fundamental implementar 
-                        diversas acciones y estrategias. Aquí te presentamos algunas que puedes aplicar en tu día a día, 
-                        en casa y en la escuela, basadas en recomendaciones académicas:
-                    </p>
-                </div>
-
-                <div class="strategies-container">
-                    <div class="strategy-card">
-                        <div class="strategy-header">
-                            <i class="fas fa-recycle"></i>
-                            <h3>Gestión de Residuos</h3>
-                        </div>
-                        <div class="strategy-content">
-                            <p>
-                                Establecer un sistema de tarifa de recolección de residuos puede incentivar una mejor gestión en los hogares. 
-                                Es crucial realizar evaluaciones iniciales de los desechos generados para identificar los tipos más comunes 
-                                y su volumen.
-                            </p>
-                            <div class="three-r">
-                                <h4>Estrategia de las 3R:</h4>
-                                <div class="r-items">
-                                    <span class="r-item">Reducir</span>
-                                    <span class="r-item">Reutilizar</span>
-                                    <span class="r-item">Reciclar</span>
-                                </div>
-                            </div>
-                            <div class="tip">
-                                <i class="fas fa-lightbulb"></i>
-                                <span>Apoyar a recicladores informales ayuda a reducir desechos en vertederos</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="strategy-card">
-                        <div class="strategy-header">
-                            <i class="fas fa-tint"></i>
-                            <h3>Ahorro de Recursos</h3>
-                        </div>
-                        <div class="strategy-content">
-                            <div class="resource-item">
-                                <h4><i class="fas fa-water"></i> Agua</h4>
-                                <p>Instalar dispositivos de ahorro en colegios y hogares. Captar y reutilizar agua de lluvia para riego de jardines.</p>
-                            </div>
-                            <div class="resource-item">
-                                <h4><i class="fas fa-bolt"></i> Energía</h4>
-                                <p>Concientizar sobre el consumo eléctrico, apagando y desenchufando equipos tras su uso.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="strategy-card">
-                        <div class="strategy-header">
-                            <i class="fas fa-leaf"></i>
-                            <h3>Materiales Sostenibles</h3>
-                        </div>
-                        <div class="strategy-content">
-                            <p>
-                                Evaluar el uso de materiales que reduzcan el consumo de papel y otros recursos es fundamental, 
-                                promoviendo la digitalización de documentos y el uso de libros electrónicos.
-                            </p>
-                            <div class="sustainable-alternatives">
-                                <div class="alternative">
-                                    <i class="fas fa-tablet-alt"></i>
-                                    <span>Documentos digitales</span>
-                                </div>
-                                <div class="alternative">
-                                    <i class="fas fa-book-reader"></i>
-                                    <span>Libros electrónicos</span>
-                                </div>
-                                <div class="alternative">
-                                    <i class="fas fa-seedling"></i>
-                                    <span>Materiales biodegradables</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="strategy-card">
-                        <div class="strategy-header">
-                            <i class="fas fa-graduation-cap"></i>
-                            <h3>Educación y Conciencia</h3>
-                        </div>
-                        <div class="strategy-content">
-                            <p>
-                                Organizar actividades de educación y concientización sobre sostenibilidad es clave. 
-                                Las instituciones educativas tienen la responsabilidad de integrar la sostenibilidad 
-                                en los planes de estudio.
-                            </p>
-                            <div class="education-goals">
-                                <div class="goal">Capacitar en toma de decisiones informadas</div>
-                                <div class="goal">Desarrollar habilidades de resolución de problemas ambientales</div>
-                                <div class="goal">Formar líderes ambientales comprometidos</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="strategy-card">
-                        <div class="strategy-header">
-                            <i class="fas fa-hands-helping"></i>
-                            <h3>Participación Ciudadana</h3>
-                        </div>
-                        <div class="strategy-content">
-                            <p>
-                                Fomentar una cultura de participación y empoderamiento es esencial para que los estudiantes 
-                                se conviertan en agentes de cambio y líderes comprometidos con la sostenibilidad.
-                            </p>
-                            <div class="participation-ways">
-                                <div class="way">
-                                    <i class="fas fa-bullhorn"></i>
-                                    <span>Campañas de concienciación</span>
-                                </div>
-                                <div class="way">
-                                    <i class="fas fa-tree"></i>
-                                    <span>Proyectos de reforestación</span>
-                                </div>
-                                <div class="way">
-                                    <i class="fas fa-users"></i>
-                                    <span>Grupos ambientales escolares</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Video Section -->
-    <div class="section-template" id="video-template">
-        <section class="content-section">
-            <div class="section-header">
-                <h1>Nuestro Compromiso Verde</h1>
-                <h2>Pequeñas Acciones, Gran Impacto</h2>
-            </div>
-            
-            <div class="content-body">
-                <div class="video-container">
-                    <div class="video-placeholder">
-                        <i class="fas fa-play-circle"></i>
-                        <h3>Video: Nuestro Compromiso Verde</h3>
-                        <p>Descubre cómo pequeñas acciones pueden generar un gran impacto en nuestro planeta</p>
-                        <button class="play-button">
-                            <i class="fas fa-play"></i>
-                            Reproducir Video
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="video-description">
-                    <h3>En este video aprenderás:</h3>
-                    <ul class="video-topics">
-                        <li><i class="fas fa-check"></i>Cómo implementar prácticas sostenibles en tu día a día</li>
-                        <li><i class="fas fa-check"></i>Testimonios de jóvenes comprometidos con el cambio</li>
-                        <li><i class="fas fa-check"></i>Resultados reales de proyectos ambientales escolares</li>
-                        <li><i class="fas fa-check"></i>Tips prácticos para reducir tu huella ecológica</li>
-                        <li><i class="fas fa-check"></i>Cómo inspirar a otros a unirse al movimiento verde</li>
-                    </ul>
-                </div>
-
-                <div class="video-resources">
-                    <h3>Recursos Adicionales</h3>
-                    <div class="resources-grid">
-                        <div class="resource-item">
-                            <i class="fas fa-file-pdf"></i>
-                            <div>
-                                <h4>Guía de Acción Sostenible</h4>
-                                <p>Descarga nuestra guía completa con 50 acciones concretas para ser más sostenible</p>
-                                <button class="btn-outline">Descargar PDF</button>
-                            </div>
-                        </div>
-                        <div class="resource-item">
-                            <i class="fas fa-images"></i>
-                            <div>
-                                <h4>Galería de Proyectos</h4>
-                                <p>Explora proyectos ambientales exitosos desarrollados por estudiantes</p>
-                                <button class="btn-outline">Ver Galería</button>
-                            </div>
-                        </div>
-                        <div class="resource-item">
-                            <i class="fas fa-podcast"></i>
-                            <div>
-                                <h4>Podcast EcoJoven</h4>
-                                <p>Escucha entrevistas con expertos y activistas ambientales</p>
-                                <button class="btn-outline">Escuchar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Activities Section -->
-    <div class="section-template" id="activities-template">
-        <section class="content-section">
-            <div class="section-header">
-                <h1>Actividades Interactivas</h1>
-                <h2>Aprende Haciendo</h2>
-            </div>
-            
-            <div class="content-body">
-                <div class="activities-container">
-                    <div class="activity-card">
-                        <div class="activity-header">
-                            <i class="fas fa-clipboard-check"></i>
-                            <h3>Mi Reto Sostenible Diario</h3>
-                            <span class="activity-type">Cuestionario Interactivo</span>
-                        </div>
-                        <div class="activity-content">
-                            <p>
-                                Un cuestionario de autoevaluación donde podrás responder preguntas sobre tus hábitos diarios 
-                                relacionados con el consumo de agua, energía, gestión de residuos y transporte.
-                            </p>
-                            <div class="activity-features">
-                                <div class="feature">
-                                    <i class="fas fa-chart-bar"></i>
-                                    <span>Puntuación de sostenibilidad personalizada</span>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-lightbulb"></i>
-                                    <span>Consejos personalizados para mejorar</span>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-target"></i>
-                                    <span>Metas semanales alcanzables</span>
-                                </div>
-                            </div>
-                            <button class="btn-primary activity-btn" id="start-quiz">
-                                <i class="fas fa-play"></i>
-                                Comenzar Cuestionario
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="activity-card">
-                        <div class="activity-header">
-                            <i class="fas fa-lightbulb"></i>
-                            <h3>Cadena de Ideas Verdes</h3>
-                            <span class="activity-type">Muro Colaborativo</span>
-                        </div>
-                        <div class="activity-content">
-                            <p>
-                                Un espacio abierto donde puedes publicar tus propias ideas creativas para implementar 
-                                prácticas sostenibles en tu entorno (hogar, escuela, comunidad).
-                            </p>
-                            <div class="collaboration-features">
-                                <div class="feature">
-                                    <i class="fas fa-users"></i>
-                                    <span>Colabora con otros estudiantes</span>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-heart"></i>
-                                    <span>Vota por las mejores ideas</span>
-                                </div>
-                                <div class="feature">
-                                    <i class="fas fa-trophy"></i>
-                                    <span>"Idea del Mes" destacada</span>
-                                </div>
-                            </div>
-                            <button class="btn-secondary activity-btn" id="open-collaboration">
-                                <i class="fas fa-plus"></i>
-                                Agregar Mi Idea
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quiz Container (Hidden initially) -->
-                <div class="quiz-container" id="quiz-container" style="display: none;">
-                    <div class="quiz-header">
-                        <h3>Mi Reto Sostenible Diario</h3>
-                        <div class="quiz-progress">
-                            <div class="progress-bar">
-                                <div class="progress-fill" id="progress-fill"></div>
-                            </div>
-                            <span class="question-counter" id="question-counter">1 / 10</span>
-                        </div>
-                    </div>
-                    
-                    <div class="quiz-content" id="quiz-content">
-                        <!-- Quiz questions will be loaded here -->
-                    </div>
-                    
-                    <div class="quiz-controls">
-                        <button class="btn-outline" id="quiz-back" disabled>Anterior</button>
-                        <button class="btn-primary" id="quiz-next">Siguiente</button>
-                    </div>
-                </div>
-
-                <!-- Collaboration Wall -->
-                <div class="collaboration-wall" id="collaboration-wall">
-                    <h3>💡 Muro de Ideas Verdes</h3>
-                    <div class="idea-form">
-                        <textarea placeholder="Comparte tu idea sostenible..." id="idea-input"></textarea>
-                        <button class="btn-primary" id="submit-idea">
-                            <i class="fas fa-paper-plane"></i>
-                            Publicar Idea
-                        </button>
-                    </div>
-                    <div class="ideas-container" id="ideas-container">
-                        <!-- Ideas will be loaded here -->
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+    <footer>
+        <p>&copy; 2025 EcoConciencia Joven. Creado con fines educativos.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
