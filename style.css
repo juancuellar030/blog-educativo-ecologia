@@ -1,15 +1,13 @@
-/* --- Variables de Color y Fuentes (Tema Oscuro) --- */
+/* --- Variables de Color y Fuentes (Tema Natural/Claro) --- */
 :root {
-    /* Paleta Principal */
-    --forest-green: #1b4332; /* Fondo principal más oscuro */
-    --dark-gray: #28292B;    /* Fondo de paneles y cabecera */
-    --accent-green: #7fb069;  /* Títulos principales y acentos activos */
-    --secondary-green: #4a7c59; /* Botones de navegación */
-    --ocean-blue: #006466;      /* Bordes y separadores */
-    --light-gray: #f8f9fa;    /* Texto principal */
-    --white: #ffffff;         /* Títulos secundarios y texto de botones */
+    /* Paleta Inspirada en las Imágenes */
+    --page-bg: #f4f5f0;         /* Fondo de página, un blanco roto muy claro */
+    --panel-green: #e1e8dd;     /* Verde suave para paneles como header y footer */
+    --text-green: #3a5a40;      /* Verde oscuro para todo el texto y logos */
+    --accent-green: #89a281;    /* Verde medio para bordes, acentos y hover */
+    --content-bg: #ffffff;      /* Blanco puro para el área de contenido principal */
 
-    /* Fuentes */
+    /* Fuentes (sin cambios) */
     --font-headings: 'Be Vietnam Pro', sans-serif;
     --font-body: 'Open Sans', sans-serif;
 }
@@ -23,20 +21,20 @@
 
 body {
     font-family: var(--font-body);
-    background-color: var(--forest-green); /* Fondo oscuro principal */
-    color: var(--light-gray); /* Texto claro para contraste */
+    background-color: var(--page-bg);
+    color: var(--text-green);
     line-height: 1.6;
 }
 
-/* --- Cabecera y Navegación (Estilo Botones) --- */
+/* --- Cabecera y Navegación (Estilo Minimalista) --- */
 .site-header {
-    background-color: var(--dark-gray);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    background-color: var(--panel-green);
+    box-shadow: none; /* Quitamos la sombra para un look más plano */
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 2px solid var(--ocean-blue);
+    border-bottom: 2px solid #d1d9ca; /* Borde sutil */
 }
 
 .header-content {
@@ -54,67 +52,53 @@ body {
 
 .logo h1 {
     font-family: var(--font-headings);
-    color: var(--accent-green); /* Color de acento para el título */
+    color: var(--text-green);
     margin-left: 10px;
     font-size: 1.5rem;
 }
-/* Estilo de los iconos en la cabecera */
 .logo svg {
-    stroke: var(--accent-green);
+    stroke: var(--text-green);
 }
 
 nav ul {
     list-style-type: none;
     display: flex;
-    gap: 0.75rem; /* Espacio entre botones */
+    gap: 1.5rem;
 }
 
+/* Revertimos a un estilo de enlace de texto limpio */
 nav a {
     text-decoration: none;
-    color: var(--white);
-    background-color: var(--secondary-green);
+    color: var(--text-green);
+    background-color: transparent;
     font-weight: bold;
-    padding: 8px 16px; /* Acolchado para forma de botón */
-    border-radius: 20px; /* Bordes redondeados para estilo "píldora" */
-    border-bottom: none; /* Eliminar borde inferior anterior */
-    transition: background-color 0.3s, transform 0.2s;
-    
-    /* ===== LA CORRECCIÓN ESTÁ AQUÍ ===== */
-    white-space: nowrap; /* Evita que el texto se divida en dos líneas */
-    text-align: center;  /* Asegura que el texto esté siempre centrado */
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-bottom-color 0.3s;
+    white-space: nowrap;
 }
 
-nav a:hover {
-    background-color: var(--accent-green);
-    color: var(--forest-green);
-    transform: translateY(-2px); /* Efecto sutil al pasar el ratón */
+nav a:hover, nav a.active {
+    color: var(--text-green);
+    border-bottom-color: var(--accent-green);
 }
 
-nav a.active {
-    background-color: var(--accent-green);
-    color: var(--forest-green);
-    box-shadow: 0 0 10px rgba(127, 176, 105, 0.5);
-}
 
 /* --- Contenedor Principal y Secciones --- */
 #content-container {
     max-width: 900px;
     margin: 2rem auto;
-    padding: 0; /* Eliminamos padding para que la sección lo controle */
-    background-color: var(--dark-gray);
+    padding: 0;
+    background-color: var(--content-bg);
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    overflow: hidden; /* Asegura que los bordes redondeados se apliquen a los hijos */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Sombra suave */
+    overflow: hidden;
 }
 
 .content-section {
     display: none;
     padding: 2.5rem;
     animation: fadeIn 0.5s ease-in-out;
-    border-bottom: 1px solid var(--ocean-blue);
-}
-#content-container > .content-section:last-child {
-    border-bottom: none;
 }
 
 .content-section.active {
@@ -129,15 +113,15 @@ nav a.active {
 /* --- Estilos de Contenido --- */
 .content-section h2 {
     font-family: var(--font-headings);
-    color: var(--accent-green);
+    color: var(--text-green);
     margin-bottom: 1.5rem;
-    border-bottom: 2px solid var(--ocean-blue);
+    border-bottom: 2px solid var(--panel-green);
     padding-bottom: 0.5rem;
 }
 
 .content-section h3 {
     font-family: var(--font-headings);
-    color: var(--light-gray);
+    color: var(--text-green);
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
 }
@@ -147,14 +131,13 @@ nav a.active {
     height: auto;
     border-radius: 8px;
     margin-bottom: 1.5rem;
-    opacity: 0.9;
 }
 
 /* --- Estilos específicos de secciones --- */
 .strategy-list article {
     margin-bottom: 1.5rem;
     padding: 1rem;
-    background-color: rgba(27, 67, 50, 0.7); /* Usamos el fondo principal con transparencia */
+    background-color: var(--page-bg);
     border-left: 5px solid var(--accent-green);
     border-radius: 4px;
 }
@@ -166,7 +149,7 @@ nav a.active {
     overflow: hidden;
     margin-top: 1rem;
     border-radius: 8px;
-    border: 1px solid var(--ocean-blue);
+    border: 1px solid var(--panel-green);
 }
 
 .video-container iframe, .iframe-container iframe {
@@ -178,18 +161,18 @@ nav a.active {
 }
 
 .video-placeholder {
-    background: #2a2a2a;
+    background: #e0e0e0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    color: var(--light-gray);
+    color: #666;
 }
 
 .activity {
-    background-color: rgba(27, 67, 50, 0.7);
+    background-color: var(--page-bg);
     padding: 1.5rem;
     border-radius: 8px;
     margin-bottom: 1.5rem;
@@ -197,15 +180,15 @@ nav a.active {
 .activity small {
     display: block;
     margin-top: 1rem;
-    color: #aaa;
+    color: #777;
 }
 
 .button-disabled {
     display: inline-block;
     margin-top: 1rem;
     padding: 10px 15px;
-    background-color: #555;
-    color: #999;
+    background-color: #ccc;
+    color: #666;
     text-decoration: none;
     border-radius: 5px;
     cursor: not-allowed;
@@ -216,9 +199,9 @@ footer {
     text-align: center;
     padding: 2rem 0;
     margin-top: 2rem;
-    background-color: var(--dark-gray);
-    color: var(--light-gray);
-    border-top: 2px solid var(--ocean-blue);
+    background-color: var(--panel-green);
+    color: var(--text-green);
+    border-top: 2px solid #d1d9ca;
 }
 
 /* --- Diseño Responsivo --- */
@@ -231,14 +214,9 @@ footer {
     nav ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5rem;
+        gap: 0.5rem 1rem;
     }
     
-    nav a {
-        padding: 6px 12px;
-        font-size: 0.9rem;
-    }
-
     .logo h1 {
         font-size: 1.2rem;
     }
