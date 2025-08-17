@@ -17,7 +17,9 @@ class EcoBlog {
         this.showSection('home');
         this.initializeCollaborationWall();
         this.addAccessibilityFeatures();
+        this.ensureProperInitialPosition(); // Add this line
     }
+
 
     setupEventListeners() {
         // Navigation menu events
@@ -94,7 +96,7 @@ class EcoBlog {
         });
     }
 
-    showSection(sectionName) {
+    showSection(sectionName, updateHistory = true) {
         this.showLoading();
         
         setTimeout(() => {
@@ -102,24 +104,29 @@ class EcoBlog {
             document.querySelectorAll('.section-template').forEach(section => {
                 section.classList.remove('active');
             });
-
+    
             // Show selected section
             const targetSection = document.getElementById(`${sectionName}-template`);
             if (targetSection) {
                 targetSection.classList.add('active');
                 this.currentSection = sectionName;
                 
-                // Update URL without page reload
-                history.pushState({ section: sectionName }, '', `#${sectionName}`);
+                // Update URL without page reload (only if updateHistory is true)
+                if (updateHistory) {
+                    history.pushState({ section: sectionName }, '', `#${sectionName}`);
+                }
                 
                 // Update navigation active state
                 this.updateNavigationState(sectionName);
                 
-                // Scroll to top
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                // Scroll to content area instead of top of page
+                this.scrollToContent();
                 
                 // Initialize section-specific functionality
                 this.initializeSectionFeatures(sectionName);
+                
+                // Announce section change for screen readers
+                this.announceToScreenReader(`Navegando a ${this.getSectionTitle(sectionName)}`);
             }
             
             this.hideLoading();
@@ -140,6 +147,28 @@ class EcoBlog {
         }
     }
 
+    scrollToContent() {
+    const mainContent = document.getElementById('main-content');
+    const headerHeight = 80; // Height of your fixed header
+    
+    if (mainContent) {
+        // Calculate the position to scroll to (just below the header)
+        const targetPosition = mainContent.offsetTop - headerHeight;
+        
+        // Smooth scroll to the calculated position
+        window.scrollTo({ 
+            top: Math.max(0, targetPosition), 
+            behavior: 'smooth' 
+        });
+        
+        // Alternative approach: scroll to main content directly
+        // mainContent.scrollIntoView({ 
+        //     behavior: 'smooth', 
+        //     block: 'start' 
+        // });
+        }
+    }
+    
     updateNavigationState(activeSection) {
         document.querySelectorAll('.nav-item').forEach(item => {
             item.classList.remove('active');
@@ -1084,25 +1113,37 @@ class EcoBlog {
     handleBrowserNavigation() {
         window.addEventListener('popstate', (e) => {
             if (e.state && e.state.section) {
-                this.showSection(e.state.section, false);
+                this.showSection(e.state.section, false); // Don't update history on browser navigation
             } else {
                 // Handle initial page load or hash navigation
                 const hash = window.location.hash.substring(1);
                 if (hash && document.getElementById(`${hash}-template`)) {
-                    this.showSection(hash, false);
+                    this.showSection(hash, false); // Don't update history on initial load
                 }
             }
         });
-
+    
         // Handle initial page load
         window.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash.substring(1);
             if (hash && document.getElementById(`${hash}-template`)) {
-                this.showSection(hash, false);
+                this.showSection(hash, false); // Don't update history on initial load
+            } else {
+                // If no hash, ensure we're at the top and show home
+                this.scrollToContent();
             }
         });
     }
 
+    ensureProperInitialPosition() {
+        // Wait for the page to fully load, then ensure proper positioning
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                this.scrollToContent();
+            }, 100);
+        });
+    }
+    
     // Initialize lazy loading for images
     initializeLazyLoading() {
         const images = document.querySelectorAll('img[data-src]');
