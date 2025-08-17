@@ -166,13 +166,13 @@ body {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    /* Ensure content starts at the top of the visible area */
-    padding-top: var(--spacing-md);
+    /* Remove the extra top padding that was pushing content down */
+    padding-top: var(--spacing-sm); /* Changed from var(--spacing-md) */
 }
 
 .section-template {
     display: none;
-    /* Ensure sections start at the top */
+    /* Ensure sections start at the top with no extra margins */
     margin-top: 0;
     padding-top: 0;
 }
@@ -222,10 +222,8 @@ body {
     gap: var(--spacing-xl);
     align-items: center;
     min-height: auto;
-    
-    /* CHANGE THIS: Remove the top padding */
+    /* Remove top padding that was pushing content down */
     padding: 0 0 var(--spacing-lg) 0;
-    
     max-width: 100%;
     margin: 0 auto;
 }
@@ -234,8 +232,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* CHANGE THIS: Center align the text within the content area */
-    text-align: center; 
+    /* Center align the text and buttons */
+    text-align: center;
+    align-items: center; /* This centers flex items like buttons */
 }
 
 .hero-title {
@@ -283,7 +282,7 @@ body {
     display: flex;
     gap: var(--spacing-sm);
     margin-top: var(--spacing-lg);
-    /* ADD THIS: Center the buttons within their container */
+    /* Center the buttons within their container */
     justify-content: center;
 }
 
@@ -365,7 +364,7 @@ body {
 
 /* Features Preview */
 .features-preview {
-    margin-top: var(--spacing-lg); /* Reduced from xl to lg */
+    margin-top: var(--spacing-md); /* Reduced from var(--spacing-lg) */
     text-align: center;
 }
 .features-preview h3 {
@@ -412,12 +411,11 @@ body {
     line-height: 1.6;
 }
 
-/* Content Section */
-.content-section {
-    max-width: 100%;
-    animation: fadeInUp 0.6s ease-out;
-    margin-top: 0; /* Remove any top margin */
-    padding-top: 0; /* Remove any top padding */
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-md); /* Reduced from var(--spacing-lg) */
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .section-header {
@@ -442,10 +440,8 @@ body {
 
 .content-body {
     background: var(--white);
-    
-    /* CHANGE THIS: Remove top padding */
-    padding: var(--spacing-sm) var(--spacing-xl) var(--spacing-xl);
-    
+    /* Remove top padding to bring content up */
+    padding: var(--spacing-md) var(--spacing-xl) var(--spacing-xl);
     border-radius: var(--border-radius-large);
     box-shadow: var(--shadow-light);
 }
@@ -1293,7 +1289,7 @@ body {
     .main-content {
         padding: var(--spacing-sm);
         margin-top: 70px;
-        padding-top: var(--spacing-sm); /* Smaller top padding on mobile */
+        padding-top: var(--spacing-xs); /* Smaller top padding on mobile */
     }
     
     .nav-menu {
@@ -1347,18 +1343,16 @@ body {
    .hero-section {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: var(--spacing-md); /* Reduced gap on mobile */
-        padding: var(--spacing-md) 0; /* Reduced padding on mobile */
+        gap: var(--spacing-md);
+        padding: var(--spacing-sm) 0; /* Reduced padding on mobile */
     }
 
     .hero-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-    /* CHANGE THIS: Center align text and flex items (like the buttons) */
-    text-align: center;
-    align-items: center; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center; /* Centers buttons and content */
     }
     
     .hero-title {
@@ -1424,7 +1418,7 @@ body {
     }
 
     .hero-section {
-        padding: var(--spacing-sm) 0; /* Minimal padding on small screens */
+        padding: var(--spacing-xs) 0; /* Minimal padding on small screens */
     }
     
     .hero-subtitle {
