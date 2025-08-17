@@ -1,3 +1,16 @@
+/* --- Bloque para autoalojar la fuente con fallback --- */
+@font-face {
+  font-family: 'Gochi Hand';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  /* El navegador intentará cargar el primer 'src' que entienda. */
+  /* Navegadores modernos usarán woff2 (más pequeño y rápido) */
+  src: url('fonts/gochi-hand-latin-400-normal.woff2') format('woff2'),
+       /* Navegadores más antiguos usarán woff como alternativa */
+       url('fonts/gochi-hand-latin-400-normal.woff') format('woff');
+}
+
 /* --- Variables de Color y Fuentes (Tema Personalizado) --- */
 :root {
     /* Paleta Exacta Proporcionada */
