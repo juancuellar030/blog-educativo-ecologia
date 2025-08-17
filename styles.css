@@ -221,10 +221,11 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-xl);
     align-items: center;
-    /* CHANGE THIS: Remove the minimum height that pushes content down */
-    min-height: auto; 
-    /* Use padding to create space around the content */
-    padding: var(--spacing-lg) 0;
+    min-height: auto;
+    
+    /* CHANGE THIS: Remove the top padding */
+    padding: 0 0 var(--spacing-lg) 0;
+    
     max-width: 100%;
     margin: 0 auto;
 }
@@ -441,7 +442,10 @@ body {
 
 .content-body {
     background: var(--white);
-    padding: var(--spacing-xl);
+    
+    /* CHANGE THIS: Remove top padding */
+    padding: var(--spacing-sm) var(--spacing-xl) var(--spacing-xl);
+    
     border-radius: var(--border-radius-large);
     box-shadow: var(--shadow-light);
 }
@@ -1348,7 +1352,13 @@ body {
     }
 
     .hero-content {
-        text-align: center; /* Center align on mobile for better appearance */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    /* CHANGE THIS: Center align text and flex items (like the buttons) */
+    text-align: center;
+    align-items: center; 
     }
     
     .hero-title {
@@ -1360,8 +1370,10 @@ body {
     }
     
     .hero-buttons {
-        flex-direction: column;
-        align-items: center;
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+    /* The centering is now handled by .hero-content, so this is not needed */
     }
     
     .features-grid {
