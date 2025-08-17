@@ -221,10 +221,10 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-xl);
     align-items: center;
-    /* Remove min-height that pushes content down */
-    min-height: auto;
+    /* CHANGE THIS: Remove the minimum height that pushes content down */
+    min-height: auto; 
+    /* Use padding to create space around the content */
     padding: var(--spacing-lg) 0;
-    /* Center the entire hero section */
     max-width: 100%;
     margin: 0 auto;
 }
@@ -233,7 +233,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: left; /* Keep text left-aligned within the content area */
+    /* CHANGE THIS: Center align the text within the content area */
+    text-align: center; 
 }
 
 .hero-title {
@@ -281,6 +282,8 @@ body {
     display: flex;
     gap: var(--spacing-sm);
     margin-top: var(--spacing-lg);
+    /* ADD THIS: Center the buttons within their container */
+    justify-content: center;
 }
 
 .btn-primary, .btn-secondary {
