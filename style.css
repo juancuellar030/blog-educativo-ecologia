@@ -78,6 +78,10 @@ nav a {
     border-radius: 20px; /* Bordes redondeados para estilo "píldora" */
     border-bottom: none; /* Eliminar borde inferior anterior */
     transition: background-color 0.3s, transform 0.2s;
+    
+    /* ===== LA CORRECCIÓN ESTÁ AQUÍ ===== */
+    white-space: nowrap; /* Evita que el texto se divida en dos líneas */
+    text-align: center;  /* Asegura que el texto esté siempre centrado */
 }
 
 nav a:hover {
