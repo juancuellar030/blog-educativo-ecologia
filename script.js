@@ -119,8 +119,8 @@ class EcoBlog {
                 // Update navigation active state
                 this.updateNavigationState(sectionName);
                 
-                // Scroll to content area instead of top of page
-                this.scrollToContent();
+                // Improved scroll positioning
+                this.scrollToTop(); // Scroll to top instead of content area
                 
                 // Initialize section-specific functionality
                 this.initializeSectionFeatures(sectionName);
@@ -132,7 +132,7 @@ class EcoBlog {
             this.hideLoading();
         }, 300);
     }
-
+    
     showLoading() {
         const loadingSpinner = document.getElementById('loading-spinner');
         if (loadingSpinner) {
@@ -147,25 +147,30 @@ class EcoBlog {
         }
     }
 
-    scrollToContent() {
-    const mainContent = document.getElementById('main-content');
-    const headerHeight = 80; // Height of your fixed header
-    
-    if (mainContent) {
-        // Calculate the position to scroll to (just below the header)
-        const targetPosition = mainContent.offsetTop - headerHeight;
+    // New method to scroll to top of content area
+    scrollToTop() {
+        const headerHeight = 80;
         
-        // Smooth scroll to the calculated position
+        // Scroll to just below the fixed header
         window.scrollTo({ 
-            top: Math.max(0, targetPosition), 
+            top: headerHeight + 10, // Small offset for breathing room
             behavior: 'smooth' 
         });
+    }
+    
+    scrollToContent() {
+        const mainContent = document.getElementById('main-content');
+        const headerHeight = 80; // Height of your fixed header
         
-        // Alternative approach: scroll to main content directly
-        // mainContent.scrollIntoView({ 
-        //     behavior: 'smooth', 
-        //     block: 'start' 
-        // });
+        if (mainContent) {
+            // For better positioning, scroll to just below the header
+            const targetPosition = mainContent.offsetTop - headerHeight + 10; // Small offset for breathing room
+            
+            // Smooth scroll to the calculated position
+            window.scrollTo({ 
+                top: Math.max(0, targetPosition), 
+                behavior: 'smooth' 
+            });
         }
     }
     
@@ -1110,15 +1115,15 @@ class EcoBlog {
     }
 
     // Handle browser back/forward buttons
-    handleBrowserNavigation() {
+   handleBrowserNavigation() {
         window.addEventListener('popstate', (e) => {
             if (e.state && e.state.section) {
-                this.showSection(e.state.section, false); // Don't update history on browser navigation
+                this.showSection(e.state.section, false);
             } else {
                 // Handle initial page load or hash navigation
                 const hash = window.location.hash.substring(1);
                 if (hash && document.getElementById(`${hash}-template`)) {
-                    this.showSection(hash, false); // Don't update history on initial load
+                    this.showSection(hash, false);
                 }
             }
         });
@@ -1127,10 +1132,10 @@ class EcoBlog {
         window.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash.substring(1);
             if (hash && document.getElementById(`${hash}-template`)) {
-                this.showSection(hash, false); // Don't update history on initial load
+                this.showSection(hash, false);
             } else {
-                // If no hash, ensure we're at the top and show home
-                this.scrollToContent();
+                // If no hash, ensure we're positioned correctly and show home
+                this.scrollToTop();
             }
         });
     }
@@ -1139,7 +1144,8 @@ class EcoBlog {
         // Wait for the page to fully load, then ensure proper positioning
         window.addEventListener('load', () => {
             setTimeout(() => {
-                this.scrollToContent();
+                // On initial load, position at top of content
+                this.scrollToTop();
             }, 100);
         });
     }
