@@ -449,4 +449,67 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
     /* 2. Flotación: Empieza cuando la entrada termina (2.2s + 0.8s = 3.0s) */
     float 5s ease-in-out 3.0s infinite;
 }
-/* ===== FIN DE LA CORRECCIÓN DE TIEMPOS ===== */
+
+/* --- Sección Interactiva "Nuestra Huella" --- */
+
+/* 1. Hacemos que la sección sea un contexto de posicionamiento */
+#huella {
+  position: relative;
+}
+
+/* 2. El contenedor que cubre el texto */
+.trash-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  border-radius: 12px; /* Para que coincida con el contenedor padre */
+  background-color: rgba(233, 228, 210, 0.8); /* Un velo semi-transparente */
+  backdrop-filter: blur(2px); /* Desenfoca ligeramente el texto de abajo */
+  transition: opacity 0.8s ease;
+}
+
+/* 3. Estilo base para cada objeto de basura */
+.trash-item {
+  position: absolute;
+  width: 80px; /* Tamaño base, puedes ajustarlo */
+  height: auto;
+  cursor: pointer;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  animation: drift linear infinite;
+}
+
+/* 4. Estado "oculto" cuando se hace clic en un objeto */
+.trash-item.is-hidden {
+  opacity: 0;
+  transform: scale(0.5); /* Se encoge un poco al desaparecer */
+  pointer-events: none; /* Ya no se puede hacer clic en él */
+}
+
+/* 5. Cuando se elimina toda la basura, la capa desaparece */
+.trash-overlay.is-cleared {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 6. Animación de deriva sutil */
+@keyframes drift {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(5px, -5px) rotate(3deg); }
+  50% { transform: translate(-5px, 5px) rotate(-3deg); }
+  75% { transform: translate(3px, 3px) rotate(2deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* 7. Posicionamiento y animación variada para cada objeto */
+.trash-item:nth-child(1) { top: 15%; left: 10%; animation-duration: 20s; }
+.trash-item:nth-child(2) { top: 20%; left: 75%; animation-duration: 18s; animation-delay: -5s; width: 60px; }
+.trash-item:nth-child(3) { top: 60%; left: 80%; animation-duration: 22s; animation-delay: -2s; }
+.trash-item:nth-child(4) { top: 70%; left: 15%; animation-duration: 17s; animation-delay: -10s; }
+.trash-item:nth-child(5) { top: 40%; left: 45%; animation-duration: 25s; animation-delay: -8s; width: 90px; }
+.trash-item:nth-child(6) { top: 75%; left: 50%; animation-duration: 16s; animation-delay: -15s; }
+.trash-item:nth-child(7) { top: 10%; left: 40%; animation-duration: 19s; animation-delay: -3s; width: 100px; }
+.trash-item:nth-child(8) { top: 45%; left: 10%; animation-duration: 23s; animation-delay: -1s; width: 50px; }
+.trash-item:nth-child(9) { top: 50%; left: 70%; animation-duration: 18s; animation-delay: -7s; }
