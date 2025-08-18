@@ -51,4 +51,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mostrar la sección inicial al cargar la página
     showSectionFromHash();
+
+    const trashItems = document.querySelectorAll('.trash-item');
+    const trashOverlay = document.querySelector('.trash-overlay');
+    let hiddenItems = 0;
+
+    // Solo ejecuta si encontramos los elementos de basura
+    if (trashItems.length > 0 && trashOverlay) {
+        trashItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Añade la clase para iniciar la animación de desaparición
+                item.classList.add('is-hidden');
+                
+                // Contamos cuántos elementos se han ocultado
+                hiddenItems++;
+                
+                // Si todos los elementos han sido ocultados...
+                if (hiddenItems === trashItems.length) {
+                    // ...esperamos un momento para que la última animación termine y luego ocultamos la capa.
+                    setTimeout(() => {
+                        trashOverlay.classList.add('is-cleared');
+                    }, 500); // 500ms, igual que la duración de la transición en CSS
+                }
+            });
+        });
+    }
 });
