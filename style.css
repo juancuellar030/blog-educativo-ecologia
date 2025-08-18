@@ -467,7 +467,7 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   z-index: 10;
   border-radius: 12px; /* Para que coincida con el contenedor padre */
   background-color: rgba(233, 228, 210, 0.8); /* Un velo semi-transparente */
-  backdrop-filter: blur(2px); /* Desenfoca ligeramente el texto de abajo */
+  backdrop-filter: blur(3px); /* Desenfoca ligeramente el texto de abajo */
   transition: opacity 0.8s ease;
 }
 
@@ -511,5 +511,5 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 .trash-item:nth-child(5) { top: 40%; left: 45%; animation-duration: 25s; animation-delay: -8s; }
 .trash-item:nth-child(6) { top: 75%; left: 50%; animation-duration: 16s; animation-delay: -15s; }
 .trash-item:nth-child(7) { top: 10%; left: 40%; animation-duration: 19s; animation-delay: -3s; }
-.trash-item:nth-child(8) { top: 45%; left: 10%; animation-duration: 23s; animation-delay: -1s; }
-.trash-item:nth-child(9) { top: 50%; left: 70%; animation-duration: 18s; animation-delay: -7s; }
+.trash-item:nth-child(8) { top: 55%; left: 25%; animation-duration: 23s; animation-delay: -1s;
+.trash-item:nth-child(9) { top: 65%; left: 60%; animation-duration: 18s; animation-delay: -7s; }
