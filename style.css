@@ -485,7 +485,7 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 .trash-item:hover {
   transform: scale(1.1); /* Agranda el objeto un 10% */
   /* Añade un suave resplandor del color del texto para destacarlo */
-  filter: drop-shadow(0 0 10px rgba(50, 43, 26, 0.5));
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
   z-index: 11; /* Se asegura de que el objeto hovered esté por encima de los demás */
 }
 
