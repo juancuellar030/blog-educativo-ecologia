@@ -146,6 +146,12 @@ nav a.active {
     margin-bottom: 0.5rem;
 }
 
+/* ===== INICIO DEL CAMBIO: TAMAÑO DE PÁRRAFOS ===== */
+.content-section p {
+    font-size: 1.1rem; /* Aumenta el tamaño del texto base (16px * 1.1 = 17.6px) */
+    margin-bottom: 1rem; /* Asegura un espaciado consistente entre párrafos */
+}
+
 .featured-image {
     max-width: 100%;
     height: auto;
