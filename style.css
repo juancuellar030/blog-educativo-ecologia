@@ -432,14 +432,14 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 
 /* Capa 2: Entra desde arriba, empezando en 2.0s */
 .layer-2 {
-  animation: fadeSlideInTop 0.8s ease-out 2.0s both;
+  animation: fadeSlideInTop 0.8s ease-out 1.8s both;
 }
 
 /* Capa 3: Animación de entrada + flotación */
 .layer-3 {
   animation: 
     /* 1. Entrada: Empieza en 2.2s */
-    fadeSlideInTop 0.8s ease-out 2.2s both,
+    fadeSlideInTop 0.8s ease-out 2.0s both,
     /* 2. Flotación: Empieza cuando la entrada termina (2.2s + 0.8s = 3.0s) */
     float 5s ease-in-out 3.0s infinite;
 }
