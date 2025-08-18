@@ -495,7 +495,7 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   z-index: 11;
 }
 .trash-item:hover .trash-image { /* Cuando se hace hover en el wrapper, afecta a la imagen */
-  filter: drop-shadow(0 0 10px rgba(255, 4255, 255, 0.5));
+  filter: drop-shadow(0 0 10px rgba(255, 4255, 255, 0.9));
 }
 
 /* 5. Estado oculto: Se aplica al wrapper y lo encoge + desvanece */
