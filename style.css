@@ -399,3 +399,61 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   animation-duration: 12s;
   animation-delay: -11s;
 }
+
+/* --- Gráfico Multicapa de Inicio --- */
+
+/* 1. Contenedor para posicionar las capas */
+.multilayer-graphic {
+  position: relative; /* Contexto para el posicionamiento absoluto de las capas */
+  max-width: 550px; /* Ajusta el tamaño máximo del gráfico */
+  margin: 1.5rem auto;
+  aspect-ratio: 4 / 3; /* Mantiene la proporción del gráfico */
+}
+
+/* 2. Estilo base para todas las capas */
+.graphic-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation-fill-mode: both; /* Mantiene el estado final de la animación */
+}
+
+/* 3. Definición de las animaciones */
+@keyframes fadeSlideInBottom {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideInTop {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); } /* Sube un poco */
+  100% { transform: translateY(0px); }
+}
+
+/* 4. Aplicación de las animaciones a cada capa con retrasos */
+
+/* Capa 1: Entra desde abajo */
+.layer-1 {
+  animation: fadeSlideInBottom 0.8s ease-out 1.2s;
+}
+
+/* Capa 2: Entra desde arriba */
+.layer-2 {
+  animation: fadeSlideInTop 0.8s ease-out 1.4s;
+}
+
+/* Capa 3: ¡Dos animaciones! Una de entrada y otra de flotación infinita */
+.layer-3 {
+  animation: 
+    /* Animación 1: Entrada desde arriba */
+    fadeSlideInTop 0.8s ease-out 1.6s,
+    /* Animación 2: Flotación infinita que empieza DESPUÉS de la entrada */
+    float 5s ease-in-out 2.4s infinite; /* 1.6s (delay) + 0.8s (duration) = 2.4s */
+}
