@@ -471,22 +471,38 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   transition: opacity 0.8s ease;
 }
 
-/* 3. Estilo base para cada objeto de basura */
+/* 3. Estilo para el "Wrapper" (el div). Se encarga del TAMAÑO, POSICIÓN y ESCALADO. */
 .trash-item {
   position: absolute;
-  width: 120px; /* Tamaño base, puedes ajustarlo */
+  width: 100px;
   height: auto;
   cursor: pointer;
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out, filter 0.3s ease-in-out;
-  animation: drift linear infinite;
+  /* La transición ahora es solo para la opacidad (el escalado se hará en el hover) */
+  transition: opacity 0.5s ease-out, transform 0.3s ease-in-out;
 }
 
-/* ===== INICIO: NUEVA REGLA PARA EL EFECTO HOVER ===== */
+/* 3.1. Estilo para la imagen interior. Se encarga de la animación de DERIVA. */
+.trash-image {
+  width: 100%;
+  height: 100%;
+  animation: drift linear infinite;
+  transition: filter 0.3s ease-in-out; /* Transición para el brillo del hover */
+}
+
+/* 4. Efecto Hover: Se aplica al wrapper, afectando al wrapper y a la imagen */
 .trash-item:hover {
-  transform: scale(1.1); /* Agranda el objeto un 10% */
-  /* Añade un suave resplandor del color del texto para destacarlo */
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
-  z-index: 11; /* Se asegura de que el objeto hovered esté por encima de los demás */
+  transform: scale(1.1); /* Agranda el wrapper */
+  z-index: 11;
+}
+.trash-item:hover .trash-image { /* Cuando se hace hover en el wrapper, afecta a la imagen */
+  filter: drop-shadow(0 0 10px rgba(255, 4255, 255, 0.5));
+}
+
+/* 5. Estado oculto: Se aplica al wrapper y lo encoge + desvanece */
+.trash-item.is-hidden {
+  opacity: 0;
+  transform: scale(0.5); /* ¡Ahora esto funcionará! */
+  pointer-events: none;
 }
 
 /* 4. Estado "oculto" cuando se hace clic en un objeto */
@@ -516,8 +532,8 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 .trash-item:nth-child(2) { top: 15%; left: 75%; animation-duration: 18s; animation-delay: -5s; }
 .trash-item:nth-child(3) { top: 54%; left: 80%; animation-duration: 22s; animation-delay: -2s; }
 .trash-item:nth-child(4) { top: 70%; left: 9%; animation-duration: 17s; animation-delay: -10s; width: 90px; }
-.trash-item:nth-child(5) { top: 24%; left: 45%; animation-duration: 25s; animation-delay: -8s; width: 140px; }
-.trash-item:nth-child(6) { top: 66%; left: 46%; animation-duration: 16s; animation-delay: -15s; }
+.trash-item:nth-child(5) { top: 20%; left: 45%; animation-duration: 25s; animation-delay: -8s; width: 140px; }
+.trash-item:nth-child(6) { top: 64%; left: 42%; animation-duration: 16s; animation-delay: -15s; }
 .trash-item:nth-child(7) { top: 10%; left: 29%; animation-duration: 19s; animation-delay: -3s; width: 130px; }
 .trash-item:nth-child(8) { top: 52%; left: 25%; animation-duration: 23s; animation-delay: -1s; width: 80px; }
 .trash-item:nth-child(9) { top: 38%; left: 60%; animation-duration: 18s; animation-delay: -7s; width: 100px; }
