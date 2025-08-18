@@ -504,12 +504,12 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 }
 
 /* 7. Posicionamiento y animación variada para cada objeto */
-.trash-item:nth-child(1) { top: 15%; left: 10%; animation-duration: 20s; }
+.trash-item:nth-child(1) { top: 15%; left: 10%; animation-duration: 20s; width: 100px; }
 .trash-item:nth-child(2) { top: 15%; left: 75%; animation-duration: 18s; animation-delay: -5s; }
 .trash-item:nth-child(3) { top: 57%; left: 80%; animation-duration: 22s; animation-delay: -2s; }
 .trash-item:nth-child(4) { top: 70%; left: 9%; animation-duration: 17s; animation-delay: -10s; width: 90px; }
-.trash-item:nth-child(5) { top: 37%; left: 45%; animation-duration: 25s; animation-delay: -8s; width: 130px; }
-.trash-item:nth-child(6) { top: 72%; left: 50%; animation-duration: 16s; animation-delay: -15s; }
-.trash-item:nth-child(7) { top: 10%; left: 32%; animation-duration: 19s; animation-delay: -3s; }
+.trash-item:nth-child(5) { top: 33%; left: 45%; animation-duration: 25s; animation-delay: -8s; width: 140px; }
+.trash-item:nth-child(6) { top: 68%; left: 50%; animation-duration: 16s; animation-delay: -15s; }
+.trash-item:nth-child(7) { top: 10%; left: 29%; animation-duration: 19s; animation-delay: -3s; width: 130px; }
 .trash-item:nth-child(8) { top: 52%; left: 25%; animation-duration: 23s; animation-delay: -1s; width: 80px; }
-.trash-item:nth-child(9) { top: 56%; left: 60%; animation-duration: 18s; animation-delay: -7s; width: 100px; }
+.trash-item:nth-child(9) { top: 49%; left: 60%; animation-duration: 18s; animation-delay: -7s; width: 100px; }
