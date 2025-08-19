@@ -571,7 +571,7 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 /* 1. Contenedor de cada bloque (imagen + texto) */
 .strategy-block {
   display: flex;
-  gap: 4rem; /* ===== CAMBIO 1: Aumentado a 4rem para dar más espacio ===== */
+  gap: 6rem; /* ===== CAMBIO 1: Aumentado a 4rem para dar más espacio ===== */
   align-items: center;
   margin-bottom: 4rem;
 }
