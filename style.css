@@ -565,3 +565,62 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 /* 9. bottle.svg */
 .trash-item:nth-child(9) { top: 38%; left: 60%; width: 100px; }}
 .trash-item:nth-child(9) .trash-image { animation-duration: 18s; animation-delay: -7s; }
+
+/* --- Parallax Estrategias --- */
+
+/* 1. Contenedor de cada bloque (imagen + texto) */
+.strategy-block {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 4rem; /* Espacio entre estrategias */
+}
+
+/* 2. Contenedor para la imagen y el texto */
+.strategy-image,
+.strategy-text {
+  flex-basis: 50%; /* Cada uno ocupa la mitad del espacio */
+}
+
+.strategy-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 3. Clase para alternar el diseño (imagen a la derecha) */
+.strategy-block.align-right {
+  flex-direction: row-reverse; /* ¡Invierte el orden! */
+}
+
+/* --- ANIMACIÓN DE SCROLL --- */
+
+/* 4. Estado inicial (oculto) de los elementos a animar */
+.strategy-image,
+.strategy-text {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* 5. Posición inicial de los elementos de la izquierda */
+.strategy-block .strategy-image,
+.strategy-block .strategy-text {
+  transform: translateX(-50px);
+}
+
+/* 6. Posición inicial de los elementos de la derecha */
+.strategy-block.align-right .strategy-image,
+.strategy-block.align-right .strategy-text {
+  transform: translateX(50px);
+}
+
+/* 7. Estado final (visible) cuando se añade la clase con JS */
+.strategy-block.is-visible .strategy-image,
+.strategy-block.is-visible .strategy-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 8. Retraso sutil para el texto, para que aparezca después de la imagen */
+.strategy-block.is-visible .strategy-text {
+  transition-delay: 0.2s;
+}
