@@ -571,7 +571,7 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 /* 1. Contenedor de cada bloque (imagen + texto) */
 .strategy-block {
   display: flex;
-  gap: 3rem; /* ===== CAMBIO 1: Aumentado el espacio entre imagen y texto ===== */
+  gap: 4rem; /* ===== CAMBIO 1: Aumentado a 4rem para dar más espacio ===== */
   align-items: center;
   margin-bottom: 4rem;
 }
@@ -587,14 +587,13 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   height: auto;
 }
 
-/* ===== INICIO CAMBIO 2: Estilo de Tarjeta para el Texto ===== */
+/* Estilo de Tarjeta para el Texto (sin cambios) */
 .strategy-text {
-  background-color: #f3efe2; /* Color consistente con otros elementos */
+  background-color: #f3efe2;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
-/* ===== FIN CAMBIO 2 ===== */
 
 /* 3. Clase para alternar el diseño (imagen a la derecha) */
 .strategy-block.align-right {
@@ -604,40 +603,55 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 /* --- ANIMACIÓN DE SCROLL (ACTUALIZADA) --- */
 
 /* 4. Estado inicial (oculto) de los elementos a animar */
-.strategy-image,
+.strategy-image {
+  opacity: 0; /* La imagen empieza invisible, la animación la mostrará */
+}
 .strategy-text {
   opacity: 0;
-  /* Ya no necesitamos 'transition' ni 'transform' aquí, la animación se encargará de todo */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Transición para el deslizamiento */
 }
 
-/* ===== INICIO CAMBIO 3: Nueva Animación de Rebote ===== */
+/* ===== INICIO CAMBIO 2: Posición inicial de las tarjetas de texto ===== */
+/* Tarjeta en un bloque normal (texto a la derecha) empieza desplazada a la derecha */
+.strategy-block .strategy-text {
+  transform: translateX(50px);
+}
+/* Tarjeta en un bloque alineado a la derecha (texto a la izquierda) empieza desplazada a la izquierda */
+.strategy-block.align-right .strategy-text {
+  transform: translateX(-50px);
+}
+/* ===== FIN CAMBIO 2 ===== */
+
+/* 5. Animación de Rebote para las imágenes (sin cambios) */
 @keyframes bounceInUp {
   0% {
     opacity: 0;
-    transform: translateY(80px); /* Empieza más abajo */
+    transform: translateY(80px);
   }
   60% {
     opacity: 1;
-    transform: translateY(-10px); /* Sube y se pasa un poco (el rebote) */
+    transform: translateY(-10px);
   }
   80% {
-    transform: translateY(5px); /* Vuelve a bajar un poco */
+    transform: translateY(5px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0); /* Se asienta en su posición final */
+    transform: translateY(0);
   }
 }
-/* ===== FIN CAMBIO 3 ===== */
 
-/* 5. Estado final (visible) cuando se añade la clase con JS */
-/* Ahora aplicamos la nueva animación en lugar de una simple transición */
+/* 6. Estado final (visible) cuando se añade la clase con JS */
+
+/* ===== INICIO CAMBIO 3: Aplicar animaciones correctas ===== */
+/* La IMAGEN utiliza la animación de rebote */
 .strategy-block.is-visible .strategy-image {
-  /* Aplicamos la animación de rebote a la imagen */
   animation: bounceInUp 1s ease-out both;
 }
-
+/* El TEXTO utiliza la transición de deslizamiento lateral */
 .strategy-block.is-visible .strategy-text {
-  /* Mantenemos una animación más simple para el texto para no sobrecargar */
-  animation: fadeSlideInBottom 0.8s ease-out 0.3s both;
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.2s; /* Un retraso para que aparezca después de la imagen */
 }
+/* ===== FIN CAMBIO 3 ===== */
