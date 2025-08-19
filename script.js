@@ -76,4 +76,32 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // ===== INICIO: LÓGICA PARA PARALLAX EN "ESTRATEGIAS" =====
+    
+    const strategyBlocks = document.querySelectorAll('.strategy-block');
+
+    // Opciones para el observador: la animación se dispara cuando el 15% del elemento es visible
+    const observerOptions = {
+        root: null, // Observa en relación con el viewport
+        threshold: 0.15 
+    };
+
+    const strategyObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            // Si el elemento está entrando en la pantalla...
+            if (entry.isIntersecting) {
+                // ...añadimos la clase que activa la animación CSS.
+                entry.target.classList.add('is-visible');
+                // Dejamos de observar este elemento para que la animación no se repita.
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Le decimos al observador que vigile cada uno de los bloques de estrategia.
+    strategyBlocks.forEach(block => {
+        strategyObserver.observe(block);
+    });
+    // ===== FIN: LÓGICA PARA PARALLAX EN "ESTRATEGIAS" =====
 });
