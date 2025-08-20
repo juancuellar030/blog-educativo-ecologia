@@ -760,25 +760,28 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   animation-delay: 2.6s;
 }
 
-/* FIXED: Enhanced active state with subtle pulsating animation */
-.sphere.active {
-  box-shadow: 0 0 20px 5px rgba(50, 43, 26, 0.5);
-  transform: translate(-50%, -50%) scale(1.02);
-  /* Add pulsating animation */
+/* ===== INICIO DE LA CORRECCIÓN ===== */
+
+/* 5. Estilo para la esfera activa (la que está seleccionada) */
+/* Al usar el ID junto con la clase .active, esta regla es ahora MÁS específica
+   que la regla de la animación de entrada, por lo que la anulará correctamente. */
+#environment.active,
+#society.active,
+#economy.active {
   animation: subtlePulse 2s ease-in-out infinite;
 }
 
-/* Subtle pulsing animation for active sphere */
+/* Definimos la animación de pulso que se aplicará */
 @keyframes subtlePulse {
-  0% { 
+  0% {
     box-shadow: 0 0 20px 5px rgba(50, 43, 26, 0.5);
     transform: translate(-50%, -50%) scale(1.02);
   }
-  50% { 
+  50% {
     box-shadow: 0 0 25px 8px rgba(50, 43, 26, 0.7);
     transform: translate(-50%, -50%) scale(1.05);
   }
-  100% { 
+  100% {
     box-shadow: 0 0 20px 5px rgba(50, 43, 26, 0.5);
     transform: translate(-50%, -50%) scale(1.02);
   }
