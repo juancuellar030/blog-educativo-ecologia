@@ -255,4 +255,21 @@ document.addEventListener('DOMContentLoaded', () => {
         resultsContainer.style.display = 'block';
     });
     // ===== FIN: LÓGICA PARA EL QUIZ INTERACTIVO =====
+
+    const openPadletBtn = document.getElementById('open-padlet-btn');
+    const padletOverlay = document.getElementById('padlet-overlay');
+    const closePadletBtn = document.getElementById('close-padlet-btn');
+
+    // Función para abrir el modal de Padlet
+    openPadletBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        padletOverlay.classList.add('is-active');
+    });
+
+    // Función para cerrar el modal de Padlet
+    closePadletBtn.addEventListener('click', () => {
+        padletOverlay.classList.remove('is-active');
+    });
+
+    // ===== FIN: LÓGICA PARA EL MODAL DE PADLET =====
 });
