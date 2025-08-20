@@ -739,23 +739,23 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 
 /* FIXED: Better positioning that accounts for sphere transforms */
 #environment-label { 
-  top: 25%; /* Adjusted for better visual alignment */
+  top: 10%; /* Position in the outer ring area only */
   left: 50%; 
   transform: translateX(-50%); 
   animation-delay: 2.0s; /* Same as environment sphere */
 }
 
 #society-label { 
-  top: 50%; 
+  top: 35%; /* Position in the middle ring area (between outer and inner circles) */
   left: 50%; 
-  transform: translate(-50%, -50%); 
+  transform: translateX(-50%); 
   animation-delay: 2.3s; /* Same as society sphere */
 }
 
 #economy-label { 
-  bottom: 25%; /* Use bottom positioning for more predictable placement */
+  top: 50%; /* Position in the center (innermost circle) */
   left: 50%; 
-  transform: translateX(-50%); 
+  transform: translate(-50%, -50%); 
   font-size: 1.2rem; 
   animation-delay: 2.6s; /* Same as economy sphere */
 }
