@@ -104,4 +104,40 @@ document.addEventListener('DOMContentLoaded', () => {
         strategyObserver.observe(block);
     });
     // ===== FIN: LÓGICA PARA PARALLAX EN "ESTRATEGIAS" =====
+
+    const spheres = document.querySelectorAll('.sphere');
+    const descriptions = document.querySelectorAll('.sphere-description');
+
+    // Función para establecer el estado activo
+    function setActiveSphere(sphereId) {
+        // Actualizar las esferas
+        spheres.forEach(s => {
+            if (s.id === sphereId) {
+                s.classList.add('active');
+            } else {
+                s.classList.remove('active');
+            }
+        });
+
+        // Actualizar las descripciones
+        descriptions.forEach(d => {
+            if (d.dataset.sphere === sphereId) {
+                d.classList.add('active');
+            } else {
+                d.classList.remove('active');
+            }
+        });
+    }
+
+    // Poner el estado inicial (Environment activo)
+    setActiveSphere('environment');
+
+    // Añadir evento de clic a cada esfera
+    spheres.forEach(sphere => {
+        sphere.addEventListener('click', () => {
+            setActiveSphere(sphere.id);
+        });
+    });
+
+    // ===== FIN: LÓGICA PARA GRÁFICO DE ESFERAS =====
 });
