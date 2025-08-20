@@ -656,7 +656,7 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 }
 /* ===== FIN CAMBIO 3 ===== */
 
-/* --- Gráfico Interactivo de Esferas de Sostenibilidad --- */
+/* --- Gráfico Interactivo de Esferas de Sostenibilidad (FIXED) --- */
 
 .nested-spheres-container {
   display: flex;
@@ -686,41 +686,43 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   border-radius: 50%;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation-fill-mode: both;
+  /* FIXED: Remove animation-fill-mode and set initial opacity to 0 */
+  opacity: 0;
 }
 
 .sphere:hover {
   transform: translate(-50%, -50%) scale(1.05);
 }
 
-/* ===== INICIO CORRECCIÓN 1: Usar una animación de FADE IN para evitar el conflicto ===== */
-/* Aplicamos la animación de fadeIn que ya existe, en lugar de slideUpFadeIn */
+/* FIXED: Spheres start invisible and animate in AFTER content container finishes */
+/* Content container finishes at 1.8s (1s delay + 0.8s duration) */
 #environment {
   width: 100%; height: 100%;
   background-color: #92A242;
   z-index: 1;
-  animation: fadeIn 0.8s ease-out 1.8s;
+  /* Animation starts AFTER content container finishes (1.8s + 0.2s buffer) */
+  animation: fadeIn 0.8s ease-out 2.0s both;
 }
 #society {
   width: 66%; height: 66%;
   background-color: #B6C475;
   z-index: 2;
-  animation: fadeIn 0.8s ease-out 2.0s;
+  animation: fadeIn 0.8s ease-out 2.3s both;
 }
 #economy {
   width: 33%; height: 33%;
   background-color: #CFD6B3;
   z-index: 3;
-  animation: fadeIn 0.8s ease-out 2.2s;
+  animation: fadeIn 0.8s ease-out 2.6s both;
 }
 
-/* ===== INICIO CORRECCIÓN 2: Ajustar la capa y el estilo de las etiquetas ===== */
+/* FIXED: Proper label positioning and alignment */
 .sphere-labels {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
   pointer-events: none;
-  z-index: 5;
+  z-index: 10; /* Above all spheres */
 }
 
 .sphere-label {
@@ -728,32 +730,34 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   font-family: var(--font-headings);
   font-size: 1.5rem;
   color: var(--text-color);
-  text-shadow: 0 0 5px rgba(233, 228, 210, 0.7);
-  text-align: center; /* Asegura que el texto de varias líneas esté centrado */
-  /* La animación ahora es un fadeIn, sincronizada con la de su esfera */
+  text-shadow: 0 0 8px rgba(233, 228, 210, 0.9);
+  text-align: center;
+  white-space: nowrap; /* Prevent text wrapping for better control */
+  opacity: 0; /* Start invisible */
   animation: fadeIn 0.8s ease-out both;
 }
 
-/* Posicionamiento y animación de cada etiqueta para que coincida con la captura de pantalla */
+/* FIXED: Better positioning that accounts for sphere transforms */
 #environment-label { 
-  top: 18%; 
+  top: 25%; /* Adjusted for better visual alignment */
   left: 50%; 
   transform: translateX(-50%); 
-  width: 50%; /* Damos un ancho para que el texto se divida en dos líneas */
-  animation-delay: 1.8s; 
+  animation-delay: 2.0s; /* Same as environment sphere */
 }
+
 #society-label { 
   top: 50%; 
   left: 50%; 
   transform: translate(-50%, -50%); 
-  animation-delay: 2.0s; 
+  animation-delay: 2.3s; /* Same as society sphere */
 }
+
 #economy-label { 
-  top: 83%; 
+  bottom: 25%; /* Use bottom positioning for more predictable placement */
   left: 50%; 
   transform: translateX(-50%); 
   font-size: 1.2rem; 
-  animation-delay: 2.2s; 
+  animation-delay: 2.6s; /* Same as economy sphere */
 }
 
 .sphere.active {
@@ -761,7 +765,7 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   transform: translate(-50%, -50%) scale(1.02);
 }
 
-/* Estilo de tarjeta para las descripciones (sin cambios) */
+/* Style for descriptions (unchanged) */
 .sphere-description {
   display: none;
   background-color: #f3efe2;
