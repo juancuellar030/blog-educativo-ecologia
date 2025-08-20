@@ -760,9 +760,28 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   animation-delay: 2.6s;
 }
 
+/* FIXED: Enhanced active state with subtle pulsating animation */
 .sphere.active {
   box-shadow: 0 0 20px 5px rgba(50, 43, 26, 0.5);
   transform: translate(-50%, -50%) scale(1.02);
+  /* Add pulsating animation */
+  animation: subtlePulse 2s ease-in-out infinite;
+}
+
+/* Subtle pulsing animation for active sphere */
+@keyframes subtlePulse {
+  0% { 
+    box-shadow: 0 0 20px 5px rgba(50, 43, 26, 0.5);
+    transform: translate(-50%, -50%) scale(1.02);
+  }
+  50% { 
+    box-shadow: 0 0 25px 8px rgba(50, 43, 26, 0.7);
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+  100% { 
+    box-shadow: 0 0 20px 5px rgba(50, 43, 26, 0.5);
+    transform: translate(-50%, -50%) scale(1.02);
+  }
 }
 
 /* FIXED: Descriptions start hidden and only show when clicked */
