@@ -658,54 +658,43 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 
 /* --- Gráfico Interactivo de Esferas de Sostenibilidad --- */
 
-/* 1. Contenedor principal (gráfico + texto) */
 .nested-spheres-container {
   display: flex;
-  flex-wrap: wrap; /* Permite que se apilen en pantallas pequeñas */
+  flex-wrap: wrap;
   align-items: center;
   gap: 2rem;
   margin-top: 2rem;
 }
 
-/* 2. Contenedores del gráfico y del texto */
 .spheres-graphic {
-  flex: 1; /* Ocupa el espacio disponible */
+  flex: 1;
   min-width: 300px;
-  position: relative; /* Contexto para posicionar las esferas */
-  aspect-ratio: 1 / 1; /* Mantiene el área cuadrada */
+  position: relative;
+  aspect-ratio: 1 / 1;
 }
 
 .spheres-text {
-  flex: 1.5; /* Ocupa un poco más de espacio que el gráfico */
+  flex: 1.5;
   min-width: 300px;
 }
 
-/* 3. Estilo base para cada esfera */
 .sphere {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation-fill-mode: both; /* Mantiene el estado final de la animación */
-}
-.sphere span {
-  font-family: var(--font-headings);
-  font-size: 1.5rem;
-  color: var(--text-color);
-  text-shadow: 0 0 5px rgba(233, 228, 210, 0.7);
+  animation-fill-mode: both;
 }
 
 .sphere:hover {
   transform: translate(-50%, -50%) scale(1.05);
 }
 
-/* 4. Estilos y animaciones individuales */
+/* ===== INICIO CORRECCIÓN 1: Sincronizar animaciones de entrada ===== */
+/* La animación del contenedor termina en 1.8s. Las esferas empiezan DESPUÉS. */
 #environment {
   width: 100%; height: 100%;
   background-color: #92A242;
@@ -724,27 +713,54 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   z-index: 3;
   animation: slideUpFadeIn 0.8s ease-out 2.2s;
 }
-#economy span { font-size: 1.2rem; }
 
-/* 5. Estilo para la esfera activa (la que está seleccionada) */
+/* ===== INICIO CORRECCIÓN 2: Capa y estilo de etiquetas ===== */
+.sphere-labels {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  /* Las etiquetas no deben interferir con los clics en las esferas */
+  pointer-events: none; 
+  z-index: 5; /* Por encima de todos los círculos */
+}
+
+.sphere-label {
+  position: absolute;
+  font-family: var(--font-headings);
+  font-size: 1.5rem;
+  color: var(--text-color);
+  text-shadow: 0 0 5px rgba(233, 228, 210, 0.7);
+  /* Sincronizamos la animación de las etiquetas con la de sus esferas */
+  animation: slideUpFadeIn 0.8s ease-out both;
+}
+
+/* Posicionamiento y animación de cada etiqueta */
+#environment-label { top: 20%; left: 50%; transform: translateX(-50%); animation-delay: 1.8s; }
+#society-label { top: 50%; left: 50%; transform: translate(-50%, -50%); animation-delay: 2.0s; }
+#economy-label { top: 80%; left: 50%; transform: translateX(-50%); font-size: 1.2rem; animation-delay: 2.2s; }
+
+
 .sphere.active {
   box-shadow: 0 0 20px 5px rgba(50, 43, 26, 0.5);
   transform: translate(-50%, -50%) scale(1.02);
 }
 
-/* 6. Estilo para los bloques de descripción */
+/* ===== INICIO CORRECCIÓN 3: Estilo de tarjeta para las descripciones ===== */
 .sphere-description {
-  display: none; /* Ocultos por defecto */
+  display: none;
+  background-color: #f3efe2; /* Color de tarjeta */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 .sphere-description.active {
-  display: block; /* Visible cuando está activo */
+  display: block;
   animation: fadeIn 0.5s ease-in-out;
 }
 .sphere-description h3 {
   color: var(--header-footer-bg);
 }
 
-/* Texto de pie de página para la sección */
 .sustainability-footer {
   margin-top: 3rem;
   text-align: center;
