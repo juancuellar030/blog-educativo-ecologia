@@ -861,8 +861,28 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   cursor: pointer;
 }
 
+/* ===== INICIO CAMBIO 1: Aplicar Fuentes del Tema al Quiz ===== */
+#quiz-questions-container h2,
+#quiz-results-container h2 {
+    font-family: var(--font-headings);
+    color: var(--header-footer-bg);
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+#quiz-results-container h3 {
+    font-family: var(--font-headings);
+    color: var(--text-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+/* ===== FIN CAMBIO 1 ===== */
+
+
 /* 4. Estilos de las preguntas y respuestas */
 .quiz-instructions {
+  text-align: center;
   margin-bottom: 2rem;
   font-style: italic;
 }
@@ -913,7 +933,25 @@ input[type="radio"] {
 #quiz-results-container {
   text-align: center;
 }
-#quiz-result-title {
-  color: var(--header-footer-bg);
-  font-size: 2.5rem;
+
+/* ===== INICIO CAMBIO 2: Estilo de la Barra de Desplazamiento (Scrollbar) ===== */
+/* Para navegadores WebKit (Chrome, Safari, Edge) */
+#quiz-modal::-webkit-scrollbar {
+  width: 12px;
 }
+
+#quiz-modal::-webkit-scrollbar-track {
+  background: #d4cfbc; /* Un color de fondo claro, del tema */
+  border-radius: 10px;
+}
+
+#quiz-modal::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color); /* El color marrón de los botones */
+  border-radius: 10px;
+  border: 3px solid #d4cfbc; /* Crea un efecto de borde bonito */
+}
+
+#quiz-modal::-webkit-scrollbar-thumb:hover {
+  background-color: #7d6547; /* El color de hover de los botones */
+}
+/* ===== FIN CAMBIO 2 ===== */
