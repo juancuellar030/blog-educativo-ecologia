@@ -107,10 +107,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const spheres = document.querySelectorAll('.sphere');
     const descriptions = document.querySelectorAll('.sphere-description');
-
-    // Función para establecer el estado activo
+    const defaultMessage = document.getElementById('default-message');
+    
+    // Function to set active sphere
     function setActiveSphere(sphereId) {
-        // Actualizar las esferas
+        // Update the spheres visual state
         spheres.forEach(s => {
             if (s.id === sphereId) {
                 s.classList.add('active');
@@ -118,8 +119,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 s.classList.remove('active');
             }
         });
-
-        // Actualizar las descripciones
+    
+        // Hide default message
+        if (defaultMessage) {
+            defaultMessage.classList.remove('active');
+        }
+    
+        // Update the descriptions
         descriptions.forEach(d => {
             if (d.dataset.sphere === sphereId) {
                 d.classList.add('active');
@@ -128,11 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    // Poner el estado inicial (Environment activo)
-    setActiveSphere('environment');
-
-    // Añadir evento de clic a cada esfera
+    
+    // FIXED: No default active sphere - users must click first
+    // Remove the automatic setActiveSphere('environment') call
+    
+    // Add click events to spheres
     spheres.forEach(sphere => {
         sphere.addEventListener('click', () => {
             setActiveSphere(sphere.id);
