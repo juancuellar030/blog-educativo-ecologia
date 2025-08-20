@@ -146,4 +146,82 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ===== FIN: LÓGICA PARA GRÁFICO DE ESFERAS =====
+
+    // ===== INICIO: LÓGICA PARA EL QUIZ INTERACTIVO =====
+
+    const startQuizBtn = document.getElementById('start-quiz-btn');
+    const quizOverlay = document.getElementById('quiz-overlay');
+    const closeQuizBtn = document.getElementById('close-quiz-btn');
+    const retakeQuizBtn = document.getElementById('retake-quiz-btn');
+    const quizForm = document.getElementById('quiz-form');
+    
+    const questionsContainer = document.getElementById('quiz-questions-container');
+    const resultsContainer = document.getElementById('quiz-results-container');
+    
+    const scoreSpan = document.getElementById('quiz-score');
+    const resultTitle = document.getElementById('quiz-result-title');
+    const feedbackP = document.getElementById('quiz-feedback');
+    const tipsP = document.getElementById('quiz-tips');
+
+    // Función para abrir el quiz
+    startQuizBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        quizOverlay.classList.add('is-active');
+    });
+
+    // Función para cerrar el quiz
+    function closeQuiz() {
+        quizOverlay.classList.remove('is-active');
+        // Resetea el quiz para la próxima vez
+        quizForm.reset();
+        resultsContainer.style.display = 'none';
+        questionsContainer.style.display = 'block';
+    }
+    closeQuizBtn.addEventListener('click', closeQuiz);
+    retakeQuizBtn.addEventListener('click', closeQuiz);
+
+    // Lógica para calcular y mostrar los resultados
+    quizForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        let totalScore = 0;
+        const checkedInputs = quizForm.querySelectorAll('input[type="radio"]:checked');
+        
+        checkedInputs.forEach(input => {
+            totalScore += parseInt(input.value);
+        });
+
+        scoreSpan.textContent = totalScore;
+
+        let resultData = {};
+
+        if (totalScore >= 15 && totalScore <= 25) {
+            resultData = {
+                title: "Principiante Verde",
+                feedback: "¡Gracias por dar el primer paso hacia una EcoConciencia! Hay muchas oportunidades para que tus acciones diarias marquen una gran diferencia. Tu viaje hacia la sostenibilidad apenas comienza, y cada pequeño cambio cuenta.",
+                tips: "Consejos: Empieza por acciones sencillas como separar residuos básicos (papel, plástico) y asegúrate de cerrar siempre el grifo y apagar las luces. ¡Explora la sección 'Estrategias Sostenibles' para más ideas!"
+            };
+        } else if (totalScore >= 26 && totalScore <= 35) {
+            resultData = {
+                title: "Eco-Aprendiz",
+                feedback: "¡Vas por un excelente camino! Ya tienes una base sólida de prácticas sostenibles. Ahora es el momento de profundizar tu compromiso y explorar nuevas formas de impacto.",
+                tips: "Consejos: Intenta hacer una evaluación de los desechos que generas para mejorar tu reciclaje. Explora la captación de agua de lluvia y prefiere siempre los documentos digitales para reducir el uso de papel. ¡Tu participación inspira a otros!"
+            };
+        } else if (totalScore >= 36 && totalScore <= 45) {
+            resultData = {
+                title: "Guardián del Planeta",
+                feedback: "¡Felicidades, eres un verdadero Guardián del Planeta! Tu compromiso con la sostenibilidad es ejemplar y tus acciones demuestran una profunda conciencia ambiental. Eres un líder y agente de cambio.",
+                tips: "Consejos: Continúa fomentando la participación en tu comunidad. Promueve activamente la integración de la sostenibilidad en los planes de estudio y alienta el uso de materiales sostenibles. ¡Sigue sembrando futuro!"
+            };
+        }
+
+        resultTitle.textContent = resultData.title;
+        feedbackP.textContent = resultData.feedback;
+        tipsP.textContent = resultData.tips;
+
+        // Oculta las preguntas y muestra los resultados
+        questionsContainer.style.display = 'none';
+        resultsContainer.style.display = 'block';
+    });
+    // ===== FIN: LÓGICA PARA EL QUIZ INTERACTIVO =====
 });
