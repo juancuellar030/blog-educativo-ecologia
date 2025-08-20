@@ -774,14 +774,17 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 /* Definimos la animación de pulso que se aplicará */
 @keyframes subtlePulse {
   0% {
+    opacity: 1; /* <-- ¡LA LÍNEA CLAVE! Asegura que la esfera sea visible. */
     box-shadow: 0 0 20px 5px rgba(50, 43, 26, 0.5);
     transform: translate(-50%, -50%) scale(1.02);
   }
   50% {
+    opacity: 1; /* Opcional, pero buena práctica */
     box-shadow: 0 0 25px 8px rgba(50, 43, 26, 0.7);
     transform: translate(-50%, -50%) scale(1.05);
   }
   100% {
+    opacity: 1; /* Opcional, pero buena práctica */
     box-shadow: 0 0 20px 5px rgba(50, 43, 26, 0.5);
     transform: translate(-50%, -50%) scale(1.02);
   }
