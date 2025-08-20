@@ -693,35 +693,34 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   transform: translate(-50%, -50%) scale(1.05);
 }
 
-/* ===== INICIO CORRECCIÓN 1: Sincronizar animaciones de entrada ===== */
-/* La animación del contenedor termina en 1.8s. Las esferas empiezan DESPUÉS. */
+/* ===== INICIO CORRECCIÓN 1: Usar una animación de FADE IN para evitar el conflicto ===== */
+/* Aplicamos la animación de fadeIn que ya existe, en lugar de slideUpFadeIn */
 #environment {
   width: 100%; height: 100%;
   background-color: #92A242;
   z-index: 1;
-  animation: slideUpFadeIn 0.8s ease-out 1.8s;
+  animation: fadeIn 0.8s ease-out 1.8s;
 }
 #society {
   width: 66%; height: 66%;
   background-color: #B6C475;
   z-index: 2;
-  animation: slideUpFadeIn 0.8s ease-out 2.0s;
+  animation: fadeIn 0.8s ease-out 2.0s;
 }
 #economy {
   width: 33%; height: 33%;
   background-color: #CFD6B3;
   z-index: 3;
-  animation: slideUpFadeIn 0.8s ease-out 2.2s;
+  animation: fadeIn 0.8s ease-out 2.2s;
 }
 
-/* ===== INICIO CORRECCIÓN 2: Capa y estilo de etiquetas ===== */
+/* ===== INICIO CORRECCIÓN 2: Ajustar la capa y el estilo de las etiquetas ===== */
 .sphere-labels {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  /* Las etiquetas no deben interferir con los clics en las esferas */
-  pointer-events: none; 
-  z-index: 5; /* Por encima de todos los círculos */
+  pointer-events: none;
+  z-index: 5;
 }
 
 .sphere-label {
@@ -730,25 +729,42 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   font-size: 1.5rem;
   color: var(--text-color);
   text-shadow: 0 0 5px rgba(233, 228, 210, 0.7);
-  /* Sincronizamos la animación de las etiquetas con la de sus esferas */
-  animation: slideUpFadeIn 0.8s ease-out both;
+  text-align: center; /* Asegura que el texto de varias líneas esté centrado */
+  /* La animación ahora es un fadeIn, sincronizada con la de su esfera */
+  animation: fadeIn 0.8s ease-out both;
 }
 
-/* Posicionamiento y animación de cada etiqueta */
-#environment-label { top: 20%; left: 50%; transform: translateX(-50%); animation-delay: 1.8s; }
-#society-label { top: 50%; left: 50%; transform: translate(-50%, -50%); animation-delay: 2.0s; }
-#economy-label { top: 80%; left: 50%; transform: translateX(-50%); font-size: 1.2rem; animation-delay: 2.2s; }
-
+/* Posicionamiento y animación de cada etiqueta para que coincida con la captura de pantalla */
+#environment-label { 
+  top: 18%; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: 50%; /* Damos un ancho para que el texto se divida en dos líneas */
+  animation-delay: 1.8s; 
+}
+#society-label { 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  animation-delay: 2.0s; 
+}
+#economy-label { 
+  top: 83%; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  font-size: 1.2rem; 
+  animation-delay: 2.2s; 
+}
 
 .sphere.active {
   box-shadow: 0 0 20px 5px rgba(50, 43, 26, 0.5);
   transform: translate(-50%, -50%) scale(1.02);
 }
 
-/* ===== INICIO CORRECCIÓN 3: Estilo de tarjeta para las descripciones ===== */
+/* Estilo de tarjeta para las descripciones (sin cambios) */
 .sphere-description {
   display: none;
-  background-color: #f3efe2; /* Color de tarjeta */
+  background-color: #f3efe2;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
