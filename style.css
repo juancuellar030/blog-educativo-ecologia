@@ -823,15 +823,15 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(50, 43, 26, 0.7); /* Marrón oscuro semi-transparente */
+  background-color: rgba(50, 43, 26, 0.7);
   backdrop-filter: blur(5px);
   z-index: 2000;
-  display: none; /* Oculto por defecto */
+  display: none;
   justify-content: center;
   align-items: center;
 }
 #quiz-overlay.is-active {
-  display: flex; /* Se muestra con flex para centrar el modal */
+  display: flex;
 }
 
 /* 2. La ventana del quiz */
@@ -843,7 +843,7 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   max-width: 800px;
   width: 90%;
   max-height: 90vh;
-  overflow-y: auto; /* Permite scroll si el contenido es largo */
+  overflow-y: auto;
   position: relative;
   animation: slideUpFadeIn 0.5s ease-out;
 }
@@ -861,7 +861,7 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   cursor: pointer;
 }
 
-/* ===== INICIO CAMBIO 1: Aplicar Fuentes del Tema al Quiz ===== */
+/* Fuentes del Tema para el Quiz */
 #quiz-questions-container h2,
 #quiz-results-container h2 {
     font-family: var(--font-headings);
@@ -870,15 +870,12 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
     text-align: center;
     margin-bottom: 0.5rem;
 }
-
 #quiz-results-container h3 {
     font-family: var(--font-headings);
     color: var(--text-color);
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
 }
-/* ===== FIN CAMBIO 1 ===== */
-
 
 /* 4. Estilos de las preguntas y respuestas */
 .quiz-instructions {
@@ -886,11 +883,18 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   margin-bottom: 2rem;
   font-style: italic;
 }
+
+/* ===== INICIO CAMBIO 2: Estilo de Tarjeta para cada Pregunta ===== */
 .quiz-question {
   margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #d4cfbc;
+  background-color: #f3efe2; /* Color de tarjeta */
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  /* Eliminamos el border-bottom anterior */
 }
+/* ===== FIN CAMBIO 2 ===== */
+
 .quiz-question p {
   font-weight: bold;
   margin-bottom: 0.8rem;
@@ -906,9 +910,20 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 .quiz-question label:hover {
   background-color: #d4cfbc;
 }
+
+/* ===== INICIO CAMBIO 3: Estilo de "Seleccionado" Persistente ===== */
+.quiz-question label.is-selected {
+    background-color: #d4cfbc; /* Mismo color que el hover */
+}
+/* ===== FIN CAMBIO 3 ===== */
+
+/* ===== INICIO CAMBIO 1: Color del Botón de Radio ===== */
 input[type="radio"] {
   margin-right: 10px;
+  accent-color: var(--accent-color); /* ¡La propiedad mágica! Cambia el color del círculo */
 }
+/* ===== FIN CAMBIO 1 ===== */
+
 
 /* 5. Estilo para el nuevo botón activo */
 .button-active {
@@ -934,24 +949,19 @@ input[type="radio"] {
   text-align: center;
 }
 
-/* ===== INICIO CAMBIO 2: Estilo de la Barra de Desplazamiento (Scrollbar) ===== */
-/* Para navegadores WebKit (Chrome, Safari, Edge) */
+/* Estilo de la Barra de Desplazamiento (Scrollbar) */
 #quiz-modal::-webkit-scrollbar {
   width: 12px;
 }
-
 #quiz-modal::-webkit-scrollbar-track {
-  background: #d4cfbc; /* Un color de fondo claro, del tema */
+  background: #d4cfbc;
   border-radius: 10px;
 }
-
 #quiz-modal::-webkit-scrollbar-thumb {
-  background-color: var(--accent-color); /* El color marrón de los botones */
+  background-color: var(--accent-color);
   border-radius: 10px;
-  border: 3px solid #d4cfbc; /* Crea un efecto de borde bonito */
+  border: 3px solid #d4cfbc;
 }
-
 #quiz-modal::-webkit-scrollbar-thumb:hover {
-  background-color: #7d6547; /* El color de hover de los botones */
+  background-color: #7d6547;
 }
-/* ===== FIN CAMBIO 2 ===== */
