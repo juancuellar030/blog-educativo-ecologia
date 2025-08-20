@@ -230,7 +230,7 @@
                 <h3>Actividad 2: "Cadena de Ideas Verdes"</h3>
                 <p>Un espacio abierto donde puedes publicar tus propias ideas creativas para implementar prácticas sostenibles en tu entorno. ¡Comenta y colabora con las ideas de otros!</p>
                 <p><strong>Propósito:</strong> Fomentar la participación, la creatividad y la resolución de problemas ambientales.</p>
-                <a href="#" class="button-disabled" title="Próximamente">Ir al Muro Colaborativo (Próximamente)</a>
+                <a href="#" class="button-active" id="open-padlet-btn">Ir al Muro Colaborativo</a>
                 <small><em>Herramienta sugerida: Un Padlet incrustado o un foro en el blog.</em></small>
             </div>
         </section>
@@ -379,5 +379,24 @@
     </div>
 </div>
 <!-- ===== FIN: ESTRUCTURA DEL QUIZ INTERACTIVO ===== -->
+
+<div id="padlet-overlay">
+    <div id="padlet-modal">
+        <button id="close-padlet-btn">&times;</button>
+        <h3>Cadena de Ideas Verdes</h3>
+        <p class="padlet-instructions">¡Publica tus propias ideas creativas para un futuro sostenible y comenta en las de otros! Juntos construimos el cambio.</p>
+        
+        <!-- El iframe del Padlet va aquí -->
+        <div class="padlet-embed-container">
+            <iframe 
+                src="https://padlet.com/embed/uizn1xxnzyn8ytv3" 
+                frameborder="0" 
+                allow="camera; microphone; geolocation; display-capture; clipboard-write" 
+                title="Muro Colaborativo - Cadena de Ideas Verdes">
+            </iframe>
+        </div>
+    </div>
+</div>
+    
 </body>
 </html>
