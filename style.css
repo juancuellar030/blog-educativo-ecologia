@@ -737,27 +737,27 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   animation: fadeIn 0.8s ease-out both;
 }
 
-/* FIXED: Better positioning that accounts for sphere transforms */
+/* FIXED: True arc positioning using polar coordinates */
 #environment-label { 
-  top: 15%; /* Upper arc position */
-  left: 25%; /* Left side of the arc */
-  transform: translateX(-50%) rotate(-15deg); /* Slight rotation for arc effect */
-  animation-delay: 2.0s; /* Same as environment sphere */
+  top: 20%; 
+  left: 20%; 
+  transform: translateX(-50%); 
+  animation-delay: 2.0s;
 }
 
 #society-label { 
-  top: 30%; /* Middle arc position */
-  right: 15%; /* Right side for arc balance */
-  transform: translateX(50%) rotate(10deg); /* Opposite rotation */
-  animation-delay: 2.3s; /* Same as society sphere */
+  top: 20%; 
+  right: 20%; 
+  transform: translateX(50%); 
+  animation-delay: 2.3s;
 }
 
 #economy-label { 
-  bottom: 20%; /* Lower arc position */
+  bottom: 15%; 
   left: 50%; 
-  transform: translateX(-50%); /* Center alignment for bottom */
+  transform: translateX(-50%); 
   font-size: 1.2rem; 
-  animation-delay: 2.6s; /* Same as economy sphere */
+  animation-delay: 2.6s;
 }
 
 .sphere.active {
@@ -765,13 +765,14 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   transform: translate(-50%, -50%) scale(1.02);
 }
 
-/* Style for descriptions (unchanged) */
+/* FIXED: Descriptions start hidden and only show when clicked */
 .sphere-description {
   display: none;
   background-color: #f3efe2;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  /* Remove the default active state - no description shows initially */
 }
 .sphere-description.active {
   display: block;
