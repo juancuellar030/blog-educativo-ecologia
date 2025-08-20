@@ -739,7 +739,7 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 
 /* FIXED: True arc positioning using polar coordinates */
 #environment-label { 
-  top: 15%; 
+  top: 8%; 
   left: 50%; 
   transform: translateX(-50%); 
   animation-delay: 2.0s;
@@ -753,7 +753,7 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 }
 
 #economy-label { 
-  bottom: 0%; 
+  bottom: 50%; 
   left: 50%; 
   transform: translateX(-50%); 
   font-size: 1.2rem; 
