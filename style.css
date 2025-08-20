@@ -739,21 +739,21 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 
 /* FIXED: True arc positioning using polar coordinates */
 #environment-label { 
-  top: 20%; 
-  left: 20%; 
+  top: 15%; 
+  left: 50%; 
   transform: translateX(-50%); 
   animation-delay: 2.0s;
 }
 
 #society-label { 
-  top: 20%; 
-  right: 20%; 
+  top: 22%; 
+  right: 50%; 
   transform: translateX(50%); 
   animation-delay: 2.3s;
 }
 
 #economy-label { 
-  bottom: 15%; 
+  bottom: 0%; 
   left: 50%; 
   transform: translateX(-50%); 
   font-size: 1.2rem; 
