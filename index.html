@@ -63,11 +63,19 @@
         
             <!-- ===== INICIO: GRÁFICO INTERACTIVO DE ESFERAS ===== -->
             <div class="nested-spheres-container">
-                <!-- Parte Visual del Gráfico -->
+                <!-- ===== INICIO: ESTRUCTURA DE GRÁFICO CORREGIDA ===== -->
                 <div class="spheres-graphic">
-                    <div class="sphere" id="environment"><span>Medio Ambiente</span></div>
-                    <div class="sphere" id="society"><span>Sociedad</span></div>
-                    <div class="sphere" id="economy"><span>Economía</span></div>
+                    <!-- Círculos (sin texto adentro) -->
+                    <div class="sphere" id="environment"></div>
+                    <div class="sphere" id="society"></div>
+                    <div class="sphere" id="economy"></div>
+                    
+                    <!-- Etiquetas (en su propia capa, por encima de todo) -->
+                    <div class="sphere-labels">
+                        <div class="sphere-label" id="environment-label">Medio Ambiente</div>
+                        <div class="sphere-label" id="society-label">Sociedad</div>
+                        <div class="sphere-label" id="economy-label">Economía</div>
+                    </div>
                 </div>
                 <!-- Parte de Texto del Gráfico -->
                 <div class="spheres-text">
