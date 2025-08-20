@@ -80,7 +80,14 @@
                 
                 <!-- Parte de Texto del Gráfico -->
                 <div class="spheres-text">
-                    <div class="sphere-description active" data-sphere="environment">
+                    <!-- FIXED: Default message when no sphere is selected -->
+                    <div class="sphere-description active" id="default-message">
+                        <h3>Explora las Esferas de Sostenibilidad</h3>
+                        <p>Haz clic en cualquiera de los círculos para descubrir cómo cada esfera contribuye al desarrollo sostenible. Cada una representa un pilar fundamental para construir un futuro equilibrado.</p>
+                    </div>
+                    
+                    <!-- FIXED: Remove default active class from environment -->
+                    <div class="sphere-description" data-sphere="environment">
                         <h3>Medio Ambiente (Biosfera)</h3>
                         <p>El círculo más grande y exterior representa el Medio Ambiente. Esto subraya que todas las actividades y sistemas humanos están intrínsecamente contenidos y dependen del mundo natural. La Tierra es vista como un sistema cerrado en materiales.</p>
                     </div>
