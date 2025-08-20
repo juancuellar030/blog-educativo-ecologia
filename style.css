@@ -739,23 +739,23 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 
 /* FIXED: Better positioning that accounts for sphere transforms */
 #environment-label { 
-  top: 10%; /* Position in the outer ring area only */
-  left: 50%; 
-  transform: translateX(-50%); 
+  top: 15%; /* Upper arc position */
+  left: 25%; /* Left side of the arc */
+  transform: translateX(-50%) rotate(-15deg); /* Slight rotation for arc effect */
   animation-delay: 2.0s; /* Same as environment sphere */
 }
 
 #society-label { 
-  top: 35%; /* Position in the middle ring area (between outer and inner circles) */
-  left: 50%; 
-  transform: translateX(-50%); 
+  top: 30%; /* Middle arc position */
+  right: 15%; /* Right side for arc balance */
+  transform: translateX(50%) rotate(10deg); /* Opposite rotation */
   animation-delay: 2.3s; /* Same as society sphere */
 }
 
 #economy-label { 
-  top: 50%; /* Position in the center (innermost circle) */
+  bottom: 20%; /* Lower arc position */
   left: 50%; 
-  transform: translate(-50%, -50%); 
+  transform: translateX(-50%); /* Center alignment for bottom */
   font-size: 1.2rem; 
   animation-delay: 2.6s; /* Same as economy sphere */
 }
