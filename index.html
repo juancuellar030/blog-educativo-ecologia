@@ -223,7 +223,7 @@
                 <h3>Actividad 1: "Mi Reto Sostenible Diario"</h3>
                 <p>Un cuestionario de autoevaluación donde respondes preguntas sobre tus hábitos diarios. Al finalizar, recibirás una "puntuación de sostenibilidad" y consejos personalizados para mejorar.</p>
                 <p><strong>Propósito:</strong> Reforzar la conciencia ambiental y vincular la teoría con acciones prácticas.</p>
-                <a href="#" class="button-disabled" title="Próximamente">Iniciar Cuestionario (Próximamente)</a>
+                <a href="#" class="button-active" id="start-quiz-btn">Iniciar Cuestionario</a>
                 <small><em>Herramienta sugerida: Se podría implementar con Google Forms o Typeform.</em></small>
             </div>
             <div class="activity">
@@ -242,5 +242,142 @@
     </footer>
 
     <script src="script.js"></script>
+
+<!-- ======================================================= -->
+<!-- ===== INICIO: ESTRUCTURA DEL QUIZ INTERACTIVO ===== -->
+<!-- ======================================================= -->
+<div id="quiz-overlay">
+    <div id="quiz-modal">
+        <button id="close-quiz-btn">&times;</button>
+        
+        <!-- Parte de las Preguntas del Quiz -->
+        <div id="quiz-questions-container">
+            <h2>Mi Reto Sostenible Diario</h2>
+            <p class="quiz-instructions">Selecciona la opción con la que más te identifiques para cada pregunta.</p>
+            
+            <form id="quiz-form">
+                <!-- PREGUNTA 1 -->
+                <div class="quiz-question">
+                    <p>1. ¿Con qué frecuencia separas los residuos en diferentes categorías?</p>
+                    <label><input type="radio" name="q1" value="3" required> Siempre lo hago, es un hábito.</label>
+                    <label><input type="radio" name="q1" value="2"> A veces, cuando tengo tiempo.</label>
+                    <label><input type="radio" name="q1" value="1"> Rara vez o nunca lo hago.</label>
+                    <label><input type="radio" name="q1" value="1"> No sé cómo hacerlo.</label>
+                </div>
+                <!-- PREGUNTA 2 -->
+                <div class="quiz-question">
+                    <p>2. ¿Qué tanto te esfuerzas por reducir la cantidad de residuos que generas?</p>
+                    <label><input type="radio" name="q2" value="3" required> Busco activamente formas de reducir.</label>
+                    <label><input type="radio" name="q2" value="2"> Intento reducir, pero a menudo olvido.</label>
+                    <label><input type="radio" name="q2" value="1"> No me preocupo mucho por reducir.</label>
+                </div>
+                <!-- PREGUNTA 3 -->
+                <div class="quiz-question">
+                    <p>3. Antes de desechar un objeto, ¿consideras reutilizarlo?</p>
+                    <label><input type="radio" name="q3" value="3" required> Siempre busco formas de reutilizar.</label>
+                    <label><input type="radio" name="q3" value="2"> A veces se me ocurre, pero no siempre.</label>
+                    <label><input type="radio" name="q3" value="1"> Prefiero comprar cosas nuevas.</label>
+                </div>
+                <!-- PREGUNTA 4 -->
+                 <div class="quiz-question">
+                    <p>4. ¿Conoces los tipos de residuos de tu entorno y cómo gestionarlos?</p>
+                    <label><input type="radio" name="q4" value="3" required> Sí, conozco bien los tipos y su gestión.</label>
+                    <label><input type="radio" name="q4" value="2"> Tengo una idea general, no estoy seguro.</label>
+                    <label><input type="radio" name="q4" value="1"> No, no presto atención a eso.</label>
+                </div>
+                <!-- PREGUNTA 5 -->
+                <div class="quiz-question">
+                    <p>5. ¿Cierras el grifo al cepillarte los dientes?</p>
+                    <label><input type="radio" name="q5" value="3" required> Sí, siempre cierro el grifo.</label>
+                    <label><input type="radio" name="q5" value="2"> La mayoría de las veces.</label>
+                    <label><input type="radio" name="q5" value="1"> A veces, a menudo lo dejo abierto.</label>
+                </div>
+                <!-- PREGUNTA 6 -->
+                <div class="quiz-question">
+                    <p>6. ¿Hay dispositivos de ahorro de agua en tu casa/escuela?</p>
+                    <label><input type="radio" name="q6" value="3" required> Sí, en ambos lugares y los uso.</label>
+                    <label><input type="radio" name="q6" value="2"> Sí, en uno de los dos lugares.</label>
+                    <label><input type="radio" name="q6" value="1"> No estoy seguro o no creo que los haya.</label>
+                </div>
+                <!-- PREGUNTA 7 -->
+                <div class="quiz-question">
+                    <p>7. ¿Has considerado recolectar agua de lluvia?</p>
+                    <label><input type="radio" name="q7" value="3" required> Sí, lo he implementado o investigo cómo.</label>
+                    <label><input type="radio" name="q7" value="2"> Lo he pensado, pero no he actuado.</label>
+                    <label><input type="radio" name="q7" value="1"> No, nunca se me había ocurrido.</label>
+                </div>
+                <!-- PREGUNTA 8 -->
+                <div class="quiz-question">
+                    <p>8. ¿Apagas luces y desenchufas equipos que no usas?</p>
+                    <label><input type="radio" name="q8" value="3" required> Sí, siempre apago y desenchufo.</label>
+                    <label><input type="radio" name="q8" value="2"> Con frecuencia, pero a veces olvido.</label>
+                    <label><input type="radio" name="q8" value="1"> Rara vez lo hago.</label>
+                </div>
+                <!-- PREGUNTA 9 -->
+                <div class="quiz-question">
+                    <p>9. ¿Prefieres documentos digitales sobre los impresos?</p>
+                    <label><input type="radio" name="q9" value="3" required> Sí, siempre que puedo opto por lo digital.</label>
+                    <label><input type="radio" name="q9" value="2"> A veces, pero prefiero el físico para algunas cosas.</label>
+                    <label><input type="radio" name="q9" value="1"> No, prefiero los impresos.</label>
+                </div>
+                <!-- PREGUNTA 10 -->
+                <div class="quiz-question">
+                    <p>10. ¿Evitas impresiones innecesarias?</p>
+                    <label><input type="radio" name="q10" value="3" required> Sí, siempre lo reviso antes de imprimir.</label>
+                    <label><input type="radio" name="q10" value="2"> Intento evitarlo, pero a veces imprimo por comodidad.</label>
+                    <label><input type="radio" name="q10" value="1"> No, imprimo sin mucha consideración.</label>
+                </div>
+                <!-- PREGUNTA 11 -->
+                <div class="quiz-question">
+                    <p>11. ¿Participas en actividades de concientización ambiental?</p>
+                    <label><input type="radio" name="q11" value="3" required> Sí, soy muy activo y animo a otros.</label>
+                    <label><input type="radio" name="q11" value="2"> Asisto ocasionalmente a eventos o charlas.</label>
+                    <label><input type="radio" name="q11" value="1"> No, rara vez participo.</label>
+                </div>
+                <!-- PREGUNTA 12 -->
+                <div class="quiz-question">
+                    <p>12. ¿Tu escuela integra bien los temas de sostenibilidad?</p>
+                    <label><input type="radio" name="q12" value="3" required> Sí, está bien integrada y se promueve.</label>
+                    <label><input type="radio" name="q12" value="2"> Se tocan algunos temas, pero podría mejorar.</label>
+                    <label><input type="radio" name="q12" value="1"> No, o no estoy al tanto de que se haga.</label>
+                </div>
+                <!-- PREGUNTA 13 -->
+                <div class="quiz-question">
+                    <p>13. ¿Te sientes capacitado para tomar decisiones sobre temas ambientales?</p>
+                    <label><input type="radio" name="q13" value="3" required> Sí, me siento muy capaz.</label>
+                    <label><input type="radio" name="q13" value="2"> Algo capacitado, pero busco más información.</label>
+                    <label><input type="radio" name="q13" value="1"> No mucho, me parecen problemas complejos.</label>
+                </div>
+                <!-- PREGUNTA 14 -->
+                <div class="quiz-question">
+                    <p>14. ¿Te sientes empoderado para ser un agente de cambio?</p>
+                    <label><input type="radio" name="q14" value="3" required> Sí, creo en mi capacidad para influir.</label>
+                    <label><input type="radio" name="q14" value="2"> Me gustaría, pero no me considero un líder.</label>
+                    <label><input type="radio" name="q14" value="1"> No, siento que mis acciones no marcan la diferencia.</label>
+                </div>
+                <!-- PREGUNTA 15 -->
+                <div class="quiz-question">
+                    <p>15. Al comprar, ¿consideras el impacto ambiental del producto?</p>
+                    <label><input type="radio" name="q15" value="3" required> Siempre lo considero y elijo sostenible.</label>
+                    <label><input type="radio" name="q15" value="2"> La mayoría de veces, pero no es decisivo.</label>
+                    <label><input type="radio" name="q15" value="1"> Rara vez o nunca lo considero.</label>
+                </div>
+
+                <button type="submit" class="button-active">Ver Resultados</button>
+            </form>
+        </div>
+
+        <!-- Parte de los Resultados del Quiz (oculto al inicio) -->
+        <div id="quiz-results-container" style="display: none;">
+            <h2>Tu Nivel de EcoConciencia</h2>
+            <h3 id="quiz-result-title"></h3>
+            <p><strong>Puntuación: <span id="quiz-score"></span>/45</strong></p>
+            <p id="quiz-feedback"></p>
+            <p id="quiz-tips"></p>
+            <button id="retake-quiz-btn" class="button-active">Volver a Intentar</button>
+        </div>
+    </div>
+</div>
+<!-- ===== FIN: ESTRUCTURA DEL QUIZ INTERACTIVO ===== -->
 </body>
 </html>
