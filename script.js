@@ -162,13 +162,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultTitle = document.getElementById('quiz-result-title');
     const feedbackP = document.getElementById('quiz-feedback');
     const tipsP = document.getElementById('quiz-tips');
-
+    
     // Función para abrir el quiz
     startQuizBtn.addEventListener('click', (e) => {
         e.preventDefault();
         quizOverlay.classList.add('is-active');
     });
-
+    
     // Función para cerrar el quiz
     function closeQuiz() {
         quizOverlay.classList.remove('is-active');
@@ -176,25 +176,56 @@ document.addEventListener('DOMContentLoaded', () => {
         quizForm.reset();
         resultsContainer.style.display = 'none';
         questionsContainer.style.display = 'block';
+        // ===== CAMBIO: Elimina todas las selecciones al cerrar =====
+        quizForm.querySelectorAll('.is-selected').forEach(label => label.classList.remove('is-selected'));
     }
     closeQuizBtn.addEventListener('click', closeQuiz);
     retakeQuizBtn.addEventListener('click', closeQuiz);
-
+    
+    // ===== INICIO CAMBIO: Lógica para el resaltado persistente =====
+    const allRadioButtons = quizForm.querySelectorAll('input[type="radio"]');
+    
+    allRadioButtons.forEach(radio => {
+        radio.addEventListener('change', (event) => {
+            // 1. Obtiene el nombre del grupo de la pregunta (ej. "q1")
+            const groupName = event.target.name;
+    
+            // 2. Encuentra todos los labels DENTRO de ese grupo
+            const labelsInGroup = quizForm.querySelectorAll(`input[name="${groupName}"]`);
+    
+            // 3. Elimina la clase 'is-selected' de todos los labels en ese grupo
+            labelsInGroup.forEach(input => {
+                input.parentElement.classList.remove('is-selected');
+            });
+    
+            // 4. Añade la clase 'is-selected' solo al label del radio button que fue seleccionado
+            event.target.parentElement.classList.add('is-selected');
+        });
+    });
+    // ===== FIN CAMBIO =====
+    
     // Lógica para calcular y mostrar los resultados
     quizForm.addEventListener('submit', (e) => {
         e.preventDefault();
-
+    
         let totalScore = 0;
         const checkedInputs = quizForm.querySelectorAll('input[type="radio"]:checked');
         
+        // Validar que todas las preguntas fueron respondidas
+        const totalQuestions = 15; // Ajusta si cambias el número de preguntas
+        if (checkedInputs.length < totalQuestions) {
+            alert("Por favor, responde todas las preguntas antes de ver los resultados.");
+            return;
+        }
+    
         checkedInputs.forEach(input => {
             totalScore += parseInt(input.value);
         });
-
+    
         scoreSpan.textContent = totalScore;
-
+    
         let resultData = {};
-
+    
         if (totalScore >= 15 && totalScore <= 25) {
             resultData = {
                 title: "Principiante Verde",
@@ -214,11 +245,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 tips: "Consejos: Continúa fomentando la participación en tu comunidad. Promueve activamente la integración de la sostenibilidad en los planes de estudio y alienta el uso de materiales sostenibles. ¡Sigue sembrando futuro!"
             };
         }
-
+    
         resultTitle.textContent = resultData.title;
         feedbackP.textContent = resultData.feedback;
         tipsP.textContent = resultData.tips;
-
+    
         // Oculta las preguntas y muestra los resultados
         questionsContainer.style.display = 'none';
         resultsContainer.style.display = 'block';
