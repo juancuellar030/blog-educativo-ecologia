@@ -968,7 +968,7 @@ input[type="radio"] {
 
 /* --- Estilos para el Padlet Embebido --- */
 
-/* 1. La capa oscura de fondo (reutilizamos el estilo del quiz) */
+/* 1. La capa oscura de fondo (sin cambios) */
 #padlet-overlay {
   position: fixed;
   top: 0;
@@ -988,27 +988,31 @@ input[type="radio"] {
 
 /* 2. La ventana del Padlet */
 #padlet-modal {
-  background-color: var(--content-bg);
+  /* ===== INICIO CAMBIO 1: Invertir colores del modal ===== */
+  background-color: var(--header-footer-bg); /* Fondo verde oscuro */
+  /* ===== FIN CAMBIO 1 ===== */
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-  max-width: 1000px; /* Un poco más ancho para el Padlet */
+  max-width: 1000px;
   width: 90%;
-  height: 90vh; /* Usamos altura de la ventana para darle espacio */
+  height: 90vh;
   position: relative;
   animation: slideUpFadeIn 0.5s ease-out;
   display: flex;
-  flex-direction: column; /* Organiza el contenido en una columna */
+  flex-direction: column;
 }
 
-/* 3. Botón de cierre (reutilizamos el estilo del quiz) */
+/* 3. Botón de cierre */
 #close-padlet-btn {
   position: absolute;
   top: 15px;
   right: 20px;
   font-size: 2.5rem;
   font-weight: bold;
-  color: var(--accent-color);
+  /* ===== CAMBIO 2: Cambiar color del botón para contraste ===== */
+  color: var(--content-bg); /* Color claro */
+  /* ===== FIN CAMBIO 2 ===== */
   background: none;
   border: none;
   cursor: pointer;
@@ -1018,7 +1022,9 @@ input[type="radio"] {
 /* 4. Título e instrucciones del Padlet */
 #padlet-modal h3 {
   font-family: var(--font-headings);
-  color: var(--header-footer-bg);
+  /* ===== CAMBIO 3: Cambiar color del título a claro ===== */
+  color: var(--content-bg);
+  /* ===== FIN CAMBIO 3 ===== */
   text-align: center;
   font-size: 2.2rem;
   margin-bottom: 0.5rem;
@@ -1027,11 +1033,14 @@ input[type="radio"] {
   text-align: center;
   margin-bottom: 1.5rem;
   font-style: italic;
+  /* ===== CAMBIO 4: Cambiar color de las instrucciones a claro ===== */
+  color: var(--content-bg);
+  /* ===== FIN CAMBIO 4 ===== */
 }
 
-/* 5. Contenedor y estilo del iframe */
+/* 5. Contenedor y estilo del iframe (sin cambios) */
 .padlet-embed-container {
-  flex-grow: 1; /* Hace que el contenedor ocupe todo el espacio restante */
+  flex-grow: 1;
   overflow: hidden;
   border-radius: 8px;
 }
