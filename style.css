@@ -1023,7 +1023,7 @@ input[type="radio"] {
 #padlet-modal h3 {
   font-family: var(--font-headings);
   /* ===== CAMBIO 3: Cambiar color del título a claro ===== */
-  color: var(--content-bg);
+  color: var(--text-color);
   /* ===== FIN CAMBIO 3 ===== */
   text-align: center;
   font-size: 2.2rem;
@@ -1034,7 +1034,7 @@ input[type="radio"] {
   margin-bottom: 1.5rem;
   font-style: italic;
   /* ===== CAMBIO 4: Cambiar color de las instrucciones a claro ===== */
-  color: var(--content-bg);
+  color: var(--text-color);
   /* ===== FIN CAMBIO 4 ===== */
 }
 
