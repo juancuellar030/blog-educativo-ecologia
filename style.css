@@ -547,11 +547,11 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 .trash-item:nth-of-type(4) .trash-image { animation-duration: 17s; animation-delay: -10s; }
 
 /* 5. milkshake.svg */
-.trash-item:nth-of-type(5) { top: 22%; left: 45%; width: 115px; }
+.trash-item:nth-of-type(5) { top: 17%; left: 45%; width: 115px; }
 .trash-item:nth-of-type(5) .trash-image { animation-duration: 25s; animation-delay: -8s; }
 
 /* 6. plastic-rings.svg */
-.trash-item:nth-of-type(6) { top: 60%; left: 41%; }
+.trash-item:nth-of-type(6) { top: 56%; left: 41%; }
 .trash-item:nth-of-type(6) .trash-image { animation-duration: 16s; animation-delay: -15s; }
 
 /* 7. plastic-bag.svg */
