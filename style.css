@@ -535,35 +535,35 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 .trash-item:nth-child(1) .trash-image { animation-duration: 20s; }
 
 /* 2. diaper.svg */
-.trash-item:nth-child(2) { top: 15%; left: 75%; }
+.trash-item:nth-child(2) { top: 18%; left: 75%; width: 75px; }
 .trash-item:nth-child(2) .trash-image { animation-duration: 18s; animation-delay: -5s; }
 
 /* 3. boot.svg */
-.trash-item:nth-child(3) { top: 54%; left: 80%; }
+.trash-item:nth-child(3) { top: 55%; left: 80%; }
 .trash-item:nth-child(3) .trash-image { animation-duration: 22s; animation-delay: -2s; }
 
 /* 4. paper.svg */
-.trash-item:nth-child(4) { top: 70%; left: 9%; width: 90px; }}
+.trash-item:nth-child(4) { top: 65%; left: 12%; }
 .trash-item:nth-child(4) .trash-image { animation-duration: 17s; animation-delay: -10s; }
 
 /* 5. milkshake.svg */
-.trash-item:nth-child(5) { top: 20%; left: 45%; width: 140px; }
+.trash-item:nth-child(5) { top: 40%; left: 45%; width: 115px; }
 .trash-item:nth-child(5) .trash-image { animation-duration: 25s; animation-delay: -8s; }
 
 /* 6. plastic-rings.svg */
-.trash-item:nth-child(6) { top: 64%; left: 42%; }
+.trash-item:nth-child(6) { top: 68%; left: 50%; }
 .trash-item:nth-child(6) .trash-image { animation-duration: 16s; animation-delay: -15s; }
 
 /* 7. plastic-bag.svg */
-.trash-item:nth-child(7) { top: 10%; left: 29%; width: 150px; }
+.trash-item:nth-child(7) { top: 10%; left: 40%; width: 125px; }
 .trash-item:nth-child(7) .trash-image { animation-duration: 19s; animation-delay: -3s; }
 
 /* 8. apple.svg */
-.trash-item:nth-child(8) { top: 52%; left: 25%; width: 80px; }
+.trash-item:nth-child(8) { top: 50%; left: 25%; width: 65px; }
 .trash-item:nth-child(8) .trash-image { animation-duration: 23s; animation-delay: -1s; }
 
 /* 9. bottle.svg */
-.trash-item:nth-child(9) { top: 38%; left: 60%; width: 100px; }}
+.trash-item:nth-child(9) { top: 45%; left: 65%; }
 .trash-item:nth-child(9) .trash-image { animation-duration: 18s; animation-delay: -7s; }
 
 /* --- Parallax Estrategias --- */
