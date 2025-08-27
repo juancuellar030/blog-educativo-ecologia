@@ -37,6 +37,16 @@ body {
     background-color: var(--page-bg);
     color: var(--text-color);
     line-height: 1.6;
+    cursor: url('images/cursor-default.png'), auto;
+}
+
+/* Define el cursor de mano para todos los elementos clicables */
+a,
+button,
+.trash-item,
+.sphere,
+.quiz-question label {
+    cursor: url('images/cursor-hand.png'), pointer;
 }
 
 /* --- Cabecera y Navegación (Estilo Botones) --- */
