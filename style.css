@@ -492,7 +492,7 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 /* 4. Efecto Hover: Se aplica al wrapper, afectando al wrapper y a la imagen */
 .trash-item:hover {
   transform: scale(1.1); /* Agranda el wrapper */
-  z-index: 11;
+  z-index: 12;
 }
 .trash-item:hover .trash-image { /* Cuando se hace hover en el wrapper, afecta a la imagen */
   filter: drop-shadow(0 0 10px rgba(255, 4255, 255, 0.9));
@@ -1057,18 +1057,20 @@ input[type="radio"] {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(233, 228, 210, 0.95); /* Fondo de tarjeta semi-transparente */
-  color: var(--text-color);
+  /* ===== INICIO CAMBIO DE COLOR ===== */
+  background-color: var(--accent-color); /* Fondo marrón */
+  color: var(--content-bg); /* Texto claro */
+  /* ===== FIN CAMBIO DE COLOR ===== */
   font-family: var(--font-headings);
   font-size: 1.2rem;
   padding: 10px 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
-  z-index: 12; /* Por encima de la basura pero debajo del hover */
-  white-space: nowrap; /* Evita que se divida en dos líneas en pantallas estrechas */
+  z-index: 11; /* Por debajo de un item "hovered" */
+  white-space: nowrap;
   transition: opacity 0.5s ease-out;
-  animation: fadeIn 1s ease-out 1.5s both; /* Aparece después de la animación de la tarjeta */
+  animation: fadeIn 1s ease-out 1.5s both;
 }
 
 /* Cuando la capa se limpia, la instrucción también se desvanece */
