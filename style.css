@@ -486,8 +486,7 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   position: absolute;
   width: 100px;
   height: auto;
-  cursor: pointer;
-  /* La transición ahora es solo para la opacidad (el escalado se hará en el hover) */
+  cursor: url('images/cursor-hand.png'), pointer; /* <-- CORRECTED LINE */
   transition: opacity 0.5s ease-out, transform 0.3s ease-in-out;
 }
 
@@ -694,9 +693,8 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  cursor: pointer;
+  cursor: url('images/cursor-hand.png'), pointer; /* <-- CORRECTED LINE */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* FIXED: Remove animation-fill-mode and set initial opacity to 0 */
   opacity: 0;
 }
 
