@@ -555,7 +555,7 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 .trash-item:nth-of-type(6) .trash-image { animation-duration: 16s; animation-delay: -15s; }
 
 /* 7. plastic-bag.svg */
-.trash-item:nth-of-type(7) { top: 10%; left: 30%; width: 125px; }
+.trash-item:nth-of-type(7) { top: 10%; left: 26%; width: 125px; }
 .trash-item:nth-of-type(7) .trash-image { animation-duration: 19s; animation-delay: -3s; }
 
 /* 8. apple.svg */
@@ -563,7 +563,7 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 .trash-item:nth-of-type(8) .trash-image { animation-duration: 23s; animation-delay: -1s; }
 
 /* 9. bottle.svg */
-.trash-item:nth-of-type(9) { top: 38%; left: 55%; }
+.trash-item:nth-of-type(9) { top: 38%; left: 60%; }
 .trash-item:nth-of-type(9) .trash-image { animation-duration: 18s; animation-delay: -7s; }
 
 /* --- Parallax Estrategias --- */
