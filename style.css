@@ -551,7 +551,7 @@ nav li:nth-child(7) { animation: slideDown 0.5s ease-out 1.4s both; }
 .trash-item:nth-of-type(5) .trash-image { animation-duration: 25s; animation-delay: -8s; }
 
 /* 6. plastic-rings.svg */
-.trash-item:nth-of-type(6) { top: 68%; left: 50%; }
+.trash-item:nth-of-type(6) { top: 62%; left: 50%; }
 .trash-item:nth-of-type(6) .trash-image { animation-duration: 16s; animation-delay: -15s; }
 
 /* 7. plastic-bag.svg */
