@@ -943,7 +943,7 @@ input[type="radio"] {
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
-  cursor: pointer;
+  cursor: url('images/cursor-hand.png'), pointer; /* <-- CORRECTED LINE */
   border: none;
   transition: background-color 0.3s, transform 0.2s;
 }
